@@ -1,10 +1,23 @@
 name: Create virtual machine
 on:
-  - push
-  - workflow_dispatch
+  push:
+  workflow_dispatch:
+    inputs:
+      disk-url:
+        description: URL of disk to use
+      vm-name:
+        description: Name of the VM (libvirt domain)
+        default: vm1.example.com
+      osinfo:
+        description: The osinfo parameter to virt-install
+        default: detect=on
+      command:
+        description: Command to run in the VM
+
 jobs:
   virt-install-almalinux:
     runs-on: ubuntu-latest
+    if: inputs.disk-url == ''
     steps:
       - uses: actions/checkout@v6
       - uses: ./
@@ -14,6 +27,7 @@ jobs:
       - run: ssh root@vm1.example.com ip a
   virt-install-fedora:
     runs-on: ubuntu-latest
+    if: inputs.disk-url == ''
     steps:
       - uses: actions/checkout@v6
       - uses: ./
@@ -26,6 +40,7 @@ jobs:
       - run: ssh root@fedora.example.test netstat -ln
   virt-install-ubuntu:
     runs-on: ubuntu-latest
+    if: inputs.disk-url == ''
     steps:
       - uses: actions/checkout@v6
       - uses: ./
@@ -35,3 +50,18 @@ jobs:
           osinfo: ubuntu24.04
       - run: ssh root@ubuntu.example.test cat /etc/os-release
       - run: virsh dumpxml ubuntu.example.test
+
+  virt-install-manual:
+    runs-on: ubuntu-latest
+    if: inputs.disk-url != ''
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./
+        with:
+          disk-url: ${{ inputs.disk-url }}
+          vm-name: ${{ inputs.vm-name }}
+          osinfo: ${{ inputs.osinfo }}
+      - run: ssh root@'${{ inputs.vm-name }}' "$INPUT_COMMAND"
+        if: inputs.command != ''
+        env:
+          INPUT_COMMAND: ${{ inputs.command }}
