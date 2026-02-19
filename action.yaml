@@ -54,6 +54,7 @@ runs:
         sudo chmod a+rw /dev/kvm
         sudo mkdir /etc/qemu && echo 'allow virbr0' | sudo tee /etc/qemu/bridge.conf
         sudo chmod u+s /usr/lib/qemu/qemu-bridge-helper
+        sudo chmod a+rw /var/run/libvirt/libvirt-sock
       shell: bash -euxo pipefail {0}
     - run: |
         virt-install --connect qemu:///session --graphics none --noautoconsole \
@@ -67,8 +68,8 @@ runs:
     - run: |
         expect "$GITHUB_ACTION_PATH"/util/virsh-console.expect '${{ inputs.vm-name }}'
         MAC=$( virsh --connect qemu:///session dumpxml '${{ inputs.vm-name }}' | xmllint --xpath 'string(/domain/devices/interface/mac/@address)' - )
-        sudo virsh net-dhcp-leases default --mac $MAC
-        IP=$( sudo virsh net-dhcp-leases default --mac $MAC | awk 'BEGIN { MAC=ARGV[1] ; delete ARGV[1] } $0 ~ MAC { gsub("/.*$", "", $5); print $5 }' $MAC )
+        virsh --connect qemu:///system net-dhcp-leases default --mac $MAC
+        IP=$( virsh --connect qemu:///system net-dhcp-leases default --mac $MAC | awk 'BEGIN { MAC=ARGV[1] ; delete ARGV[1] } $0 ~ MAC { gsub("/.*$", "", $5); print $5 }' $MAC )
         echo "$IP ${{ inputs.vm-name }}" | sudo tee -a /etc/hosts
       shell: bash -euxo pipefail {0}
     - run: ssh -o 'StrictHostKeyChecking accept-new' -v root@'${{ inputs.vm-name }}' true
