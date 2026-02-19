@@ -3,7 +3,7 @@ set DOMAIN [lindex $argv 0]
 
 set timeout 300
 
-spawn virsh -e "^D" console "$DOMAIN"
+spawn -noecho virsh -e "^D" console "$DOMAIN"
 expect {
 	"Connected to domain" { send \r ; exp_continue; }
 	"login:" { send \x04; puts \n; }
