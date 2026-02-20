@@ -37,7 +37,8 @@ runs:
       env:
         INPUT_DISK_URL: ${{ inputs.disk-url }}
       shell: bash -euxo pipefail {0}
-    - run: ssh-keygen -N '' -f ~/.ssh/id_rsa
+    - run: |
+        [ -f ~/.ssh/id_rsa ] || ssh-keygen -N '' -f ~/.ssh/id_rsa
       shell: bash
     - run: |
         (

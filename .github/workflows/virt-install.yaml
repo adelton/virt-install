@@ -32,12 +32,18 @@ jobs:
       - uses: actions/checkout@v6
       - uses: ./
         with:
-          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
-          vm-name: fedora.example.test
+          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/42/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-42-1.1.x86_64.qcow2
+          vm-name: fedora-42.example.test
           osinfo: fedora41
-      - run: ssh root@fedora.example.test cat /etc/os-release
-      - run: ssh root@fedora.example.test dnf install -y net-tools
-      - run: ssh root@fedora.example.test netstat -ln
+      - run: ssh root@fedora-42.example.test cat /etc/os-release
+      - run: ssh root@fedora-42.example.test dnf install -y net-tools
+      - run: ssh root@fedora-42.example.test netstat -ln
+      - uses: ./
+        with:
+          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
+          vm-name: fedora-43.example.test
+          osinfo: fedora41
+      - run: ssh root@fedora-43.example.test cat /etc/os-release
   virt-install-ubuntu:
     runs-on: ubuntu-latest
     if: inputs.disk-url == ''
@@ -50,6 +56,11 @@ jobs:
           osinfo: ubuntu24.04
       - run: ssh root@ubuntu.example.test cat /etc/os-release
       - run: virsh dumpxml ubuntu.example.test
+      - uses: ./
+        with:
+          disk-url: https://cloud-images.ubuntu.com/releases/noble/release/ubuntu-24.04-server-cloudimg-amd64.img
+          vm-name: ubuntu-2.example.test
+      - run: ssh root@ubuntu-2.example.test cat /etc/os-release
 
   virt-install-manual:
     runs-on: ubuntu-latest
