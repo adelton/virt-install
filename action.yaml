@@ -69,7 +69,7 @@ runs:
         INPUT_VM_NAME: ${{ inputs.vm-name }}
       shell: bash -euxo pipefail {0}
     - run: |
-        systemctl status libvirtd.service
+        systemctl status libvirtd.service || true
         ip a
         sudo chmod a+rw /dev/kvm
         sudo mkdir /etc/qemu && echo 'allow virbr0' | sudo tee /etc/qemu/bridge.conf
