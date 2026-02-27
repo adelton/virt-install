@@ -19,7 +19,7 @@
         <xsl:if test="not(eol-date) or date:seconds(eol-date) > $eol-cutoff">
           <os>
             <filename><xsl:value-of select="$filename"/></filename>
-            <xsl:copy-of select="distro | version | short-id"/>
+            <xsl:copy-of select="distro | version | short-id | name"/>
             <xsl:if test="not(distro)">
               <xsl:element name="distro">
                 <xsl:text>generic </xsl:text>
@@ -56,7 +56,11 @@
   </xsl:if>
   <xsl:text>    - `</xsl:text>
   <xsl:value-of select="short-id"/>
-  <xsl:text>`</xsl:text>
+  <xsl:text>`: [</xsl:text>
+  <xsl:value-of select="name"/>
+  <xsl:text>](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/</xsl:text>
+  <xsl:value-of select="filename"/>
+  <xsl:text>.in)</xsl:text>
   <xsl:call-template name="newline"/>
 </xsl:template>
 

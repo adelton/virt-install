@@ -6,339 +6,339 @@ Only values for distributions that haven't been marked end-of-life
 for extended period of time are shown.
 
 - almalinux
-    - `almalinux-kitten10`
-    - `almalinux10`
-    - `almalinux9`
-    - `almalinux8`
+    - `almalinux-kitten10`: [AlmaLinux Kitten 10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/almalinux.org/almalinux-kitten-10.xml.in)
+    - `almalinux10`: [AlmaLinux 10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/almalinux.org/almalinux-10.xml.in)
+    - `almalinux9`: [AlmaLinux 9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/almalinux.org/almalinux-9.xml.in)
+    - `almalinux8`: [AlmaLinux 8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/almalinux.org/almalinux-8.xml.in)
 - alpinelinux
-    - `alpinelinux3.21`
-    - `alpinelinux3.20`
-    - `alpinelinux3.19`
-    - `alpinelinux3.18`
+    - `alpinelinux3.21`: [Alpine Linux 3.21](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/alpinelinux.org/alpinelinux-3.21.xml.in)
+    - `alpinelinux3.20`: [Alpine Linux 3.20](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/alpinelinux.org/alpinelinux-3.20.xml.in)
+    - `alpinelinux3.19`: [Alpine Linux 3.19](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/alpinelinux.org/alpinelinux-3.19.xml.in)
+    - `alpinelinux3.18`: [Alpine Linux 3.18](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/alpinelinux.org/alpinelinux-3.18.xml.in)
 - alt
-    - `alt10.3`
-    - `alt10.2`
-    - `alt.p10`
-    - `alt.p11`
-    - `alt.p8`
-    - `alt.p9`
-    - `alt.sisyphus`
+    - `alt10.3`: [ALT 10.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/altlinux.org/alt-10.3.xml.in)
+    - `alt10.2`: [ALT 10.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/altlinux.org/alt-10.2.xml.in)
+    - `alt.p10`: [ALT p10 StarterKits](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/altlinux.org/alt-p10.starterkits.xml.in)
+    - `alt.p11`: [ALT p11 StarterKits](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/altlinux.org/alt-p11.starterkits.xml.in)
+    - `alt.p8`: [ALT p8 StarterKits](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/altlinux.org/alt-p8.starterkits.xml.in)
+    - `alt.p9`: [ALT p9 StarterKits](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/altlinux.org/alt-p9.starterkits.xml.in)
+    - `alt.sisyphus`: [ALT regular](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/altlinux.org/alt-sisyphus.xml.in)
 - android-x86
-    - `android-x86-9.0`
-    - `android-x86-8.1`
+    - `android-x86-9.0`: [Android-x86 9.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/android-x86.org/android-x86-9.0.xml.in)
+    - `android-x86-8.1`: [Android-x86 8.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/android-x86.org/android-x86-8.1.xml.in)
 - anolis
-    - `anolis23.1`
-    - `anolis23.0`
-    - `anolis8.9`
-    - `anolis8.8`
-    - `anolis8.6`
-    - `anolis8.4`
-    - `anolis8.2`
-    - `anolis7.9`
-    - `anolis7.7`
-    - `anolis8-unknown`
-    - `anolis-unknown`
+    - `anolis23.1`: [Anolis OS 23.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-23.1.xml.in)
+    - `anolis23.0`: [Anolis OS 23.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-23.0.xml.in)
+    - `anolis8.9`: [Anolis OS 8.9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-8.9.xml.in)
+    - `anolis8.8`: [Anolis OS 8.8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-8.8.xml.in)
+    - `anolis8.6`: [Anolis OS 8.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-8.6.xml.in)
+    - `anolis8.4`: [Anolis OS 8.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-8.4.xml.in)
+    - `anolis8.2`: [Anolis OS 8.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-8.2.xml.in)
+    - `anolis7.9`: [Anolis OS 7.9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-7.9.xml.in)
+    - `anolis7.7`: [Anolis OS 7.7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-7.7.xml.in)
+    - `anolis8-unknown`: [Anolis OS 8 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-8-unknown.xml.in)
+    - `anolis-unknown`: [Anolis OS Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openanolis.cn/anolis-unknown.xml.in)
 - archlinux
-    - `archlinux`
+    - `archlinux`: [Arch Linux](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/archlinux.org/archlinux-rolling.xml.in)
 - asianux
-    - `asianux8.0`
-    - `asianux7.3`
-    - `asianux7.2`
-    - `asianux7.1`
-    - `asianux7.0`
-    - `asianux4.7`
-    - `asianux4.6`
-    - `asianux-unknown`
+    - `asianux8.0`: [Asianux Server 8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/asianux.com/asianux-8.0.xml.in)
+    - `asianux7.3`: [Asianux Server 7 SP3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/asianux.com/asianux-7.3.xml.in)
+    - `asianux7.2`: [Asianux Server 7 SP2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/asianux.com/asianux-7.2.xml.in)
+    - `asianux7.1`: [Asianux Server 7 SP1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/asianux.com/asianux-7.1.xml.in)
+    - `asianux7.0`: [Asianux Server 7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/asianux.com/asianux-7.0.xml.in)
+    - `asianux4.7`: [Asianux Server 4 SP7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/asianux.com/asianux-4.7.xml.in)
+    - `asianux4.6`: [Asianux Server 4 SP6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/asianux.com/asianux-4.6.xml.in)
+    - `asianux-unknown`: [Asianux unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/asianux.com/asianux-unknown.xml.in)
 - caasp
-    - `caasp-unknown`
+    - `caasp-unknown`: [SUSE CaaS Platform Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/caasp-unknown.xml.in)
 - centos
-    - `centos-stream10`
-    - `centos-stream9`
+    - `centos-stream10`: [CentOS Stream 10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/centos.org/centos-stream-10.xml.in)
+    - `centos-stream9`: [CentOS Stream 9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/centos.org/centos-stream-9.xml.in)
 - circle
-    - `circle9.0`
-    - `circle8.5`
-    - `circle8.4`
-    - `circle8-unknown`
-    - `circle9-unknown`
-    - `circle-unknown`
+    - `circle9.0`: [Circle Linux 9.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cclinux.org/circle-9.0.xml.in)
+    - `circle8.5`: [Circle Linux 8.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cclinux.org/circle-8.5.xml.in)
+    - `circle8.4`: [Circle Linux 8.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cclinux.org/circle-8.4.xml.in)
+    - `circle8-unknown`: [Circle Linux 8 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cclinux.org/circle-8-unknown.xml.in)
+    - `circle9-unknown`: [Circle Linux 9 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cclinux.org/circle-9-unknown.xml.in)
+    - `circle-unknown`: [Circle Linux Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cclinux.org/circle-unknown.xml.in)
 - cirros
-    - `cirros0.4.0`
-    - `cirros0.5.0`
-    - `cirros0.5.1`
-    - `cirros0.5.2`
+    - `cirros0.4.0`: [CirrOS 0.4.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cirros-cloud.net/cirros-0.4.0.xml.in)
+    - `cirros0.5.0`: [CirrOS 0.5.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cirros-cloud.net/cirros-0.5.0.xml.in)
+    - `cirros0.5.1`: [CirrOS 0.5.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cirros-cloud.net/cirros-0.5.1.xml.in)
+    - `cirros0.5.2`: [CirrOS 0.5.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/cirros-cloud.net/cirros-0.5.2.xml.in)
 - clearlinux
-    - `clearlinux`
+    - `clearlinux`: [Clear Linux OS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/clearlinux.org/clearlinux-rolling.xml.in)
 - debian
-    - `debian13`
-    - `debian12`
-    - `debian11`
-    - `debiantesting`
-    - `debianunstable`
+    - `debian13`: [Debian 13](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/debian.org/debian-13.xml.in)
+    - `debian12`: [Debian 12](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/debian.org/debian-12.xml.in)
+    - `debian11`: [Debian 11](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/debian.org/debian-11.xml.in)
+    - `debiantesting`: [Debian testing](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/debian.org/debian-testing.xml.in)
+    - `debianunstable`: [Debian unstable](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/debian.org/debian-unstable.xml.in)
 - dragonflybsd
-    - `dragonflybsd5.6`
-    - `dragonflybsd1.12.2`
-    - `dragonflybsd2.0.1`
+    - `dragonflybsd5.6`: [DragonFlyBSD 5.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/dragonflybsd.org/dragonflybsd-5.6.xml.in)
+    - `dragonflybsd1.12.2`: [DragonFlyBSD 1.12.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/dragonflybsd.org/dragonflybsd-1.12.2.xml.in)
+    - `dragonflybsd2.0.1`: [DragonFlyBSD 2.0.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/dragonflybsd.org/dragonflybsd-2.0.1.xml.in)
 - elementaryos
-    - `elementary5.0`
+    - `elementary5.0`: [Elementary OS 5.0 Juno](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/elementary.io/elementary-5.0.xml.in)
 - eos
-    - `eos6.0`
+    - `eos6.0`: [Endless OS 6.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/endlessos.com/eos-6.0.xml.in)
 - eurolinux
-    - `eurolinux9`
-    - `eurolinux8`
+    - `eurolinux9`: [EuroLinux 9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/euro-linux.com/eurolinux-9.xml.in)
+    - `eurolinux8`: [EuroLinux 8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/euro-linux.com/eurolinux-8.xml.in)
 - fedora
-    - `fedora42`
-    - `fedora41`
-    - `silverblue41`
-    - `fedora40`
-    - `silverblue40`
-    - `fedora-eln`
-    - `fedora-coreos-next`
-    - `fedora-rawhide`
-    - `silverblue-rawhide`
-    - `fedora-coreos-stable`
-    - `fedora-coreos-testing`
-    - `fedora-unknown`
-    - `silverblue-unknown`
+    - `fedora42`: [Fedora Linux 42](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/fedora-42.xml.in)
+    - `fedora41`: [Fedora Linux 41](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/fedora-41.xml.in)
+    - `silverblue41`: [Fedora Silverblue 41](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/silverblue-41.xml.in)
+    - `fedora40`: [Fedora Linux 40](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/fedora-40.xml.in)
+    - `silverblue40`: [Fedora Silverblue 40](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/silverblue-40.xml.in)
+    - `fedora-eln`: [Fedora ELN](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/fedora-eln.xml.in)
+    - `fedora-coreos-next`: [Fedora CoreOS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/coreos-next.xml.in)
+    - `fedora-rawhide`: [Fedora Rawhide](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/fedora-rawhide.xml.in)
+    - `silverblue-rawhide`: [Fedora Silverblue Rawhide](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/silverblue-rawhide.xml.in)
+    - `fedora-coreos-stable`: [Fedora CoreOS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/coreos-stable.xml.in)
+    - `fedora-coreos-testing`: [Fedora CoreOS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/coreos-testing.xml.in)
+    - `fedora-unknown`: [Fedora](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/fedora-unknown.xml.in)
+    - `silverblue-unknown`: [Fedora Silverblue](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/silverblue-unknown.xml.in)
 - freebsd
-    - `freebsd14.2`
-    - `freebsd14.1`
-    - `freebsd13.4`
-    - `freebsd4.5`
-    - `freebsd4.4`
-    - `freebsd4.3`
-    - `freebsd4.2`
-    - `freebsd4.1`
-    - `freebsd4.0`
-    - `freebsd3.2`
-    - `freebsd3.0`
-    - `freebsd2.0`
-    - `freebsd1.0`
-    - `freebsd2.0.5`
-    - `freebsd2.2.8`
-    - `freebsd2.2.9`
+    - `freebsd14.2`: [FreeBSD 14.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-14.2.xml.in)
+    - `freebsd14.1`: [FreeBSD 14.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-14.1.xml.in)
+    - `freebsd13.4`: [FreeBSD 13.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-13.4.xml.in)
+    - `freebsd4.5`: [FreeBSD 4.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.5.xml.in)
+    - `freebsd4.4`: [FreeBSD 4.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.4.xml.in)
+    - `freebsd4.3`: [FreeBSD 4.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.3.xml.in)
+    - `freebsd4.2`: [FreeBSD 4.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.2.xml.in)
+    - `freebsd4.1`: [FreeBSD 4.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.1.xml.in)
+    - `freebsd4.0`: [FreeBSD 4.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.0.xml.in)
+    - `freebsd3.2`: [FreeBSD 3.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-3.2.xml.in)
+    - `freebsd3.0`: [FreeBSD 3.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-3.0.xml.in)
+    - `freebsd2.0`: [FreeBSD 2.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-2.0.xml.in)
+    - `freebsd1.0`: [FreeBSD 1.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-1.0.xml.in)
+    - `freebsd2.0.5`: [FreeBSD 2.0.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-2.0.5.xml.in)
+    - `freebsd2.2.8`: [FreeBSD 2.2.8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-2.2.8.xml.in)
+    - `freebsd2.2.9`: [FreeBSD 2.2.9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-2.2.9.xml.in)
 - freedos
-    - `freedos1.3`
+    - `freedos1.3`: [FreeDOS 1.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freedos.org/freedos-1.3.xml.in)
 - freenix
-    - `freenix14.2`
+    - `freenix14.2`: [Freenix 14.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freenix.net/freenix-14.2.xml.in)
 - generic linux
-    - `linux2024`
-    - `linux2022`
+    - `linux2024`: [Generic Linux 2024](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/libosinfo.org/linux-2024.xml.in)
+    - `linux2022`: [Generic Linux 2022](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/libosinfo.org/linux-2022.xml.in)
 - generic unknown
-    - `unknown`
+    - `unknown`: [Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/libosinfo.org/unknown.xml.in)
 - gentoo
-    - `gentoo`
+    - `gentoo`: [Gentoo Linux](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/gentoo.org/gentoo-rolling.xml.in)
 - gnome
-    - `gnome-continuous-3.14`
+    - `gnome-continuous-3.14`: [GNOME 3.14](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/gnome.org/gnome-continuous-3.14.xml.in)
 - guix-system
-    - `guix-system-1.4`
-    - `guix-system-1.3`
-    - `guix-system-1.1`
-    - `guix-system-hurd-latest`
-    - `guix-system-latest`
+    - `guix-system-1.4`: [Guix System 1.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/guix.gnu.org/guix-system-1.4.xml.in)
+    - `guix-system-1.3`: [Guix System 1.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/guix.gnu.org/guix-system-1.3.xml.in)
+    - `guix-system-1.1`: [Guix System 1.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/guix.gnu.org/guix-system-1.1.xml.in)
+    - `guix-system-hurd-latest`: [Guix System on GNU Hurd (latest)](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/guix.gnu.org/guix-system-hurd-latest.xml.in)
+    - `guix-system-latest`: [Guix System (latest)](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/guix.gnu.org/guix-system-latest.xml.in)
 - haiku
-    - `haikunightly`
-    - `haikur1beta4`
+    - `haikunightly`: [Haiku Nightly](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/haiku-os.org/haiku-nightly.xml.in)
+    - `haikur1beta4`: [Haiku R1/Beta4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/haiku-os.org/haiku-r1beta4.xml.in)
 - hyperbola
-    - `hyperbola03`
+    - `hyperbola03`: [Hyperbola](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/hyperbola.info/hyperbola-03.xml.in)
 - mageia
-    - `mageia9`
+    - `mageia9`: [Mageia 9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mageia.org/mageia-9.xml.in)
 - mandrake
-    - `mandrake10.2`
-    - `mandrake10.1`
-    - `mandrake10.0`
-    - `mandrake9.2`
-    - `mandrake9.1`
-    - `mandrake9.0`
-    - `mandrake8.2`
-    - `mandrake8.1`
-    - `mandrake8.0`
-    - `mandrake7.2`
-    - `mandrake7.1`
-    - `mandrake7.0`
-    - `mandrake6.1`
-    - `mandrake6.0`
-    - `mandrake5.3`
-    - `mandrake5.2`
-    - `mandrake5.1`
+    - `mandrake10.2`: [Mandrake Linux 10.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-10.2.xml.in)
+    - `mandrake10.1`: [Mandrake Linux 10.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-10.1.xml.in)
+    - `mandrake10.0`: [Mandrake Linux 10.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-10.0.xml.in)
+    - `mandrake9.2`: [Mandrake Linux 9.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-9.2.xml.in)
+    - `mandrake9.1`: [Mandrake Linux 9.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-9.1.xml.in)
+    - `mandrake9.0`: [Mandrake Linux 9.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-9.0.xml.in)
+    - `mandrake8.2`: [Mandrake Linux 8.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-8.2.xml.in)
+    - `mandrake8.1`: [Mandrake Linux 8.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-8.1.xml.in)
+    - `mandrake8.0`: [Mandrake Linux 8.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-8.0.xml.in)
+    - `mandrake7.2`: [Mandrake Linux 7.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-7.2.xml.in)
+    - `mandrake7.1`: [Mandrake Linux 7.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-7.1.xml.in)
+    - `mandrake7.0`: [Mandrake Linux 7.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-7.0.xml.in)
+    - `mandrake6.1`: [Mandrake Linux 6.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-6.1.xml.in)
+    - `mandrake6.0`: [Mandrake Linux 6.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-6.0.xml.in)
+    - `mandrake5.3`: [Mandrake Linux 5.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-5.3.xml.in)
+    - `mandrake5.2`: [Mandrake Linux 5.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-5.2.xml.in)
+    - `mandrake5.1`: [Mandrake Linux 5.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-5.1.xml.in)
 - mandriva
-    - `mandriva2010.2`
-    - `mandriva2007.1`
-    - `mandriva2007`
-    - `mandriva2006.0`
+    - `mandriva2010.2`: [Mandriva Linux 2010.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandriva-2010.2.xml.in)
+    - `mandriva2007.1`: [Mandriva Linux 2007 Spring](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandriva-2007.1.xml.in)
+    - `mandriva2007`: [Mandriva Linux 2007](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandriva-2007.xml.in)
+    - `mandriva2006.0`: [Mandriva Linux 2006.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandriva-2006.0.xml.in)
 - Manjaro
-    - `manjaro`
+    - `manjaro`: [Manjaro](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/manjaro.org/manjaro-rolling.xml.in)
 - miraclelinux
-    - `miraclelinux9.0`
-    - `miraclelinux8.4`
-    - `miraclelinux8-unknown`
-    - `miraclelinux9-unknown`
+    - `miraclelinux9.0`: [MIRACLE LINUX 9.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/miraclelinux.com/miraclelinux-9.0.xml.in)
+    - `miraclelinux8.4`: [MIRACLE LINUX 8.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/miraclelinux.com/miraclelinux-8.4.xml.in)
+    - `miraclelinux8-unknown`: [MIRACLE LINUX 8 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/miraclelinux.com/miraclelinux-8-unknown.xml.in)
+    - `miraclelinux9-unknown`: [MIRACLE LINUX 9 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/miraclelinux.com/miraclelinux-9-unknown.xml.in)
 - netbsd
-    - `netbsd10.0`
-    - `netbsd9.4`
-    - `netbsd9.3`
-    - `netbsd9.2`
-    - `netbsd9.1`
-    - `netbsd9.0`
-    - `netbsd8.2`
-    - `netbsd8.1`
-    - `netbsd8.0`
-    - `netbsd4.0`
-    - `netbsd0.9`
-    - `netbsd0.8`
+    - `netbsd10.0`: [NetBSD 10.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-10.0.xml.in)
+    - `netbsd9.4`: [NetBSD 9.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-9.4.xml.in)
+    - `netbsd9.3`: [NetBSD 9.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-9.3.xml.in)
+    - `netbsd9.2`: [NetBSD 9.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-9.2.xml.in)
+    - `netbsd9.1`: [NetBSD 9.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-9.1.xml.in)
+    - `netbsd9.0`: [NetBSD 9.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-9.0.xml.in)
+    - `netbsd8.2`: [NetBSD 8.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-8.2.xml.in)
+    - `netbsd8.1`: [NetBSD 8.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-8.1.xml.in)
+    - `netbsd8.0`: [NetBSD 8.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-8.0.xml.in)
+    - `netbsd4.0`: [NetBSD 4.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-4.0.xml.in)
+    - `netbsd0.9`: [NetBSD 0.9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-0.9.xml.in)
+    - `netbsd0.8`: [NetBSD 0.8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/netbsd.org/netbsd-0.8.xml.in)
 - netware
-    - `netware6`
-    - `netware5`
-    - `netware4`
+    - `netware6`: [Novell Netware 6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/novell.com/netware-6.xml.in)
+    - `netware5`: [Novell Netware 5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/novell.com/netware-5.xml.in)
+    - `netware4`: [Novell Netware 4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/novell.com/netware-4.xml.in)
 - nixos
-    - `nixos-25.05`
-    - `nixos-24.11`
-    - `nixos-24.05`
-    - `nixos-23.11`
-    - `nixos-unknown`
-    - `nixos-unstable`
+    - `nixos-25.05`: [NixOS 25.05](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/nixos.org/nixos-25.05.xml.in)
+    - `nixos-24.11`: [NixOS 24.11](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/nixos.org/nixos-24.11.xml.in)
+    - `nixos-24.05`: [NixOS 24.05](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/nixos.org/nixos-24.05.xml.in)
+    - `nixos-23.11`: [NixOS 23.11](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/nixos.org/nixos-23.11.xml.in)
+    - `nixos-unknown`: [NixOS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/nixos.org/nixos-unknown.xml.in)
+    - `nixos-unstable`: [NixOS Unstable](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/nixos.org/nixos-unstable.xml.in)
 - ol
-    - `ol9.4`
-    - `ol9.3`
-    - `ol9.2`
-    - `ol9.1`
-    - `ol9.0`
-    - `ol8.9`
-    - `ol8.8`
-    - `ol8.7`
-    - `ol8.6`
-    - `ol8.5`
-    - `ol8.4`
-    - `ol8.3`
-    - `ol8.2`
-    - `ol8.1`
-    - `ol8.10`
-    - `ol8.0`
-    - `ol7.9`
-    - `ol7.8`
-    - `ol7.7`
-    - `ol7.6`
-    - `ol7.5`
-    - `ol7.4`
-    - `ol7.3`
-    - `ol7.2`
-    - `ol7.1`
-    - `ol7.0`
-    - `ol9-unknown`
+    - `ol9.4`: [Oracle Linux 9.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-9.4.xml.in)
+    - `ol9.3`: [Oracle Linux 9.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-9.3.xml.in)
+    - `ol9.2`: [Oracle Linux 9.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-9.2.xml.in)
+    - `ol9.1`: [Oracle Linux 9.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-9.1.xml.in)
+    - `ol9.0`: [Oracle Linux 9.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-9.0.xml.in)
+    - `ol8.9`: [Oracle Linux 8.9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.9.xml.in)
+    - `ol8.8`: [Oracle Linux 8.8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.8.xml.in)
+    - `ol8.7`: [Oracle Linux 8.7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.7.xml.in)
+    - `ol8.6`: [Oracle Linux 8.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.6.xml.in)
+    - `ol8.5`: [Oracle Linux 8.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.5.xml.in)
+    - `ol8.4`: [Oracle Linux 8.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.4.xml.in)
+    - `ol8.3`: [Oracle Linux 8.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.3.xml.in)
+    - `ol8.2`: [Oracle Linux 8.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.2.xml.in)
+    - `ol8.1`: [Oracle Linux 8.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.1.xml.in)
+    - `ol8.10`: [Oracle Linux 8.10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.10.xml.in)
+    - `ol8.0`: [Oracle Linux 8.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-8.0.xml.in)
+    - `ol7.9`: [Oracle Linux 7.9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.9.xml.in)
+    - `ol7.8`: [Oracle Linux 7.8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.8.xml.in)
+    - `ol7.7`: [Oracle Linux 7.7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.7.xml.in)
+    - `ol7.6`: [Oracle Linux 7.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.6.xml.in)
+    - `ol7.5`: [Oracle Linux 7.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.5.xml.in)
+    - `ol7.4`: [Oracle Linux 7.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.4.xml.in)
+    - `ol7.3`: [Oracle Linux 7.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.3.xml.in)
+    - `ol7.2`: [Oracle Linux 7.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.2.xml.in)
+    - `ol7.1`: [Oracle Linux 7.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.1.xml.in)
+    - `ol7.0`: [Oracle Linux 7.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-7.0.xml.in)
+    - `ol9-unknown`: [Oracle Linux 9 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/ol-9-unknown.xml.in)
 - omnios
-    - `omnios`
+    - `omnios`: [OmniOSCE Bloody](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/omnios.org/bloody-rolling.xml.in)
 - openbsd
-    - `openbsd7.6`
-    - `openbsd7.5`
+    - `openbsd7.6`: [OpenBSD 7.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openbsd.org/openbsd-7.6.xml.in)
+    - `openbsd7.5`: [OpenBSD 7.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openbsd.org/openbsd-7.5.xml.in)
 - openindiana
-    - `openindiana`
+    - `openindiana`: [OpenIndiana Hipster](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/openindiana.org/hipster-rolling.xml.in)
 - opensuse
-    - `opensuse15.6`
-    - `opensuse15.5`
-    - `opensuse-factory`
-    - `opensusetumbleweed`
-    - `opensuse-unknown`
+    - `opensuse15.6`: [openSUSE Leap 15.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/opensuse.org/opensuse-15.6.xml.in)
+    - `opensuse15.5`: [openSUSE Leap 15.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/opensuse.org/opensuse-15.5.xml.in)
+    - `opensuse-factory`: [openSUSE](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/opensuse.org/opensuse-factory.xml.in)
+    - `opensusetumbleweed`: [openSUSE Tumbleweed](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/opensuse.org/opensuse-tumbleweed.xml.in)
+    - `opensuse-unknown`: [openSUSE](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/opensuse.org/opensuse-unknown.xml.in)
 - popos
-    - `popos20.10`
-    - `popos20.04`
-    - `popos19.10`
+    - `popos20.10`: [Pop!_OS 20.10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/system76.com/popos-20.10.xml.in)
+    - `popos20.04`: [Pop!_OS 20.04](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/system76.com/popos-20.04.xml.in)
+    - `popos19.10`: [Pop!_OS 19.10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/system76.com/popos-19.10.xml.in)
 - pureos
-    - `pureos10`
-    - `pureos9`
-    - `pureos8`
+    - `pureos10`: [PureOS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/pureos.net/pureos-10.xml.in)
+    - `pureos9`: [PureOS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/pureos.net/pureos-9.xml.in)
+    - `pureos8`: [PureOS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/pureos.net/pureos-8.xml.in)
 - rhel
-    - `rhel10.1`
-    - `rhel10.0`
-    - `rhel9.7`
-    - `rhel9.6`
-    - `rhel9.5`
-    - `rhel9.4`
-    - `rhel9.3`
-    - `rhel9.2`
-    - `rhel9.1`
-    - `rhel9.0`
-    - `rhel8.9`
-    - `rhel8.8`
-    - `rhel8.7`
-    - `rhel8.6`
-    - `rhel8.5`
-    - `rhel8.4`
-    - `rhel8.3`
-    - `rhel8.2`
-    - `rhel8.1`
-    - `rhel8.10`
-    - `rhel8.0`
-    - `rhel7.9`
-    - `rhel7.8`
-    - `rhel7.7`
-    - `rhel7.6`
-    - `rhel7.5`
-    - `rhel7.4`
-    - `rhel7.3`
-    - `rhel7.2`
-    - `rhel7.1`
-    - `rhel7.0`
-    - `rhel10-unknown`
-    - `rhel7-unknown`
-    - `rhel8-unknown`
-    - `rhel9-unknown`
-    - `rhel-unknown`
+    - `rhel10.1`: [Red Hat Enterprise Linux 10.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-10.1.xml.in)
+    - `rhel10.0`: [Red Hat Enterprise Linux 10.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-10.0.xml.in)
+    - `rhel9.7`: [Red Hat Enterprise Linux 9.7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9.7.xml.in)
+    - `rhel9.6`: [Red Hat Enterprise Linux 9.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9.6.xml.in)
+    - `rhel9.5`: [Red Hat Enterprise Linux 9.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9.5.xml.in)
+    - `rhel9.4`: [Red Hat Enterprise Linux 9.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9.4.xml.in)
+    - `rhel9.3`: [Red Hat Enterprise Linux 9.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9.3.xml.in)
+    - `rhel9.2`: [Red Hat Enterprise Linux 9.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9.2.xml.in)
+    - `rhel9.1`: [Red Hat Enterprise Linux 9.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9.1.xml.in)
+    - `rhel9.0`: [Red Hat Enterprise Linux 9.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9.0.xml.in)
+    - `rhel8.9`: [Red Hat Enterprise Linux 8.9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.9.xml.in)
+    - `rhel8.8`: [Red Hat Enterprise Linux 8.8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.8.xml.in)
+    - `rhel8.7`: [Red Hat Enterprise Linux 8.7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.7.xml.in)
+    - `rhel8.6`: [Red Hat Enterprise Linux 8.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.6.xml.in)
+    - `rhel8.5`: [Red Hat Enterprise Linux 8.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.5.xml.in)
+    - `rhel8.4`: [Red Hat Enterprise Linux 8.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.4.xml.in)
+    - `rhel8.3`: [Red Hat Enterprise Linux 8.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.3.xml.in)
+    - `rhel8.2`: [Red Hat Enterprise Linux 8.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.2.xml.in)
+    - `rhel8.1`: [Red Hat Enterprise Linux 8.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.1.xml.in)
+    - `rhel8.10`: [Red Hat Enterprise Linux 8.10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.10.xml.in)
+    - `rhel8.0`: [Red Hat Enterprise Linux 8.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8.0.xml.in)
+    - `rhel7.9`: [Red Hat Enterprise Linux 7.9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.9.xml.in)
+    - `rhel7.8`: [Red Hat Enterprise Linux 7.8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.8.xml.in)
+    - `rhel7.7`: [Red Hat Enterprise Linux 7.7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.7.xml.in)
+    - `rhel7.6`: [Red Hat Enterprise Linux 7.6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.6.xml.in)
+    - `rhel7.5`: [Red Hat Enterprise Linux 7.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.5.xml.in)
+    - `rhel7.4`: [Red Hat Enterprise Linux 7.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.4.xml.in)
+    - `rhel7.3`: [Red Hat Enterprise Linux 7.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.3.xml.in)
+    - `rhel7.2`: [Red Hat Enterprise Linux 7.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.2.xml.in)
+    - `rhel7.1`: [Red Hat Enterprise Linux 7.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.1.xml.in)
+    - `rhel7.0`: [Red Hat Enterprise Linux 7.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7.0.xml.in)
+    - `rhel10-unknown`: [Red Hat Enterprise Linux 10 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-10-unknown.xml.in)
+    - `rhel7-unknown`: [Red Hat Enterprise Linux 7 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-7-unknown.xml.in)
+    - `rhel8-unknown`: [Red Hat Enterprise Linux 8 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-8-unknown.xml.in)
+    - `rhel9-unknown`: [Red Hat Enterprise Linux 9 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-9-unknown.xml.in)
+    - `rhel-unknown`: [Red Hat Enterprise Linux Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/redhat.com/rhel-unknown.xml.in)
 - rocky
-    - `rocky9`
-    - `rocky8`
-    - `rocky-unknown`
+    - `rocky9`: [Rocky Linux 9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/rockylinux.org/rocky-9.xml.in)
+    - `rocky8`: [Rocky Linux 8](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/rockylinux.org/rocky-8.xml.in)
+    - `rocky-unknown`: [Rocky Linux Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/rockylinux.org/rocky-unknown.xml.in)
 - scientificlinux
-    - `scientificlinux7-unknown`
+    - `scientificlinux7-unknown`: [Scientific Linux 7 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/scientificlinux.org/scientificlinux-7-unknown.xml.in)
 - slackware
-    - `slackware15.0`
-    - `slackwarearm15.0`
-    - `slackware14.2`
-    - `slackware14.1`
-    - `slackware14.0`
-    - `slackware-current`
-    - `slackwarearm-current`
+    - `slackware15.0`: [Slackware 15.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/slackware.com/slackware-15.0.xml.in)
+    - `slackwarearm15.0`: [SlackwareARM 15.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/slackware.com/slackwarearm-15.0.xml.in)
+    - `slackware14.2`: [Slackware 14.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/slackware.com/slackware-14.2.xml.in)
+    - `slackware14.1`: [Slackware 14.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/slackware.com/slackware-14.1.xml.in)
+    - `slackware14.0`: [Slackware 14.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/slackware.com/slackware-14.0.xml.in)
+    - `slackware-current`: [Slackware current](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/slackware.com/slackware-current.xml.in)
+    - `slackwarearm-current`: [SlackwareARM current](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/slackware.com/slackwarearm-current.xml.in)
 - sle
-    - `sle15sp6`
-    - `sle15sp5`
-    - `sle15sp4`
-    - `sle15-unknown`
-    - `sle-unknown`
+    - `sle15sp6`: [SUSE Linux Enterprise 15 SP6](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/sle-15.6.xml.in)
+    - `sle15sp5`: [SUSE Linux Enterprise 15 SP5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/sle-15.5.xml.in)
+    - `sle15sp4`: [SUSE Linux Enterprise 15 SP4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/sle-15.4.xml.in)
+    - `sle15-unknown`: [SUSE Linux Enterprise 15 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/sle-15-unknown.xml.in)
+    - `sle-unknown`: [SUSE Linux Enterprise Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/sle-unknown.xml.in)
 - sled
-    - `sled12-unknown`
+    - `sled12-unknown`: [SUSE Linux Enterprise Desktop 12 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/sled-12-unknown.xml.in)
 - slem
-    - `slem5.5`
-    - `slem5.4`
-    - `slem5.3`
-    - `slem5.2`
-    - `slem5.1`
+    - `slem5.5`: [SUSE Linux Enterprise Micro 5.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/slem-5.5.xml.in)
+    - `slem5.4`: [SUSE Linux Enterprise Micro 5.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/slem-5.4.xml.in)
+    - `slem5.3`: [SUSE Linux Enterprise Micro 5.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/slem-5.3.xml.in)
+    - `slem5.2`: [SUSE Linux Enterprise Micro 5.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/slem-5.2.xml.in)
+    - `slem5.1`: [SUSE Linux Enterprise Micro 5.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/slem-5.1.xml.in)
 - sles
-    - `sles12-unknown`
+    - `sles12-unknown`: [SUSE Linux Enterprise Server 12 Unknown](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/suse.com/sles-12-unknown.xml.in)
 - smartos
-    - `smartos`
+    - `smartos`: [Triton SmartOS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/smartos.org/smartos-rolling.xml.in)
 - solaris
-    - `solaris11`
-    - `solaris10`
+    - `solaris11`: [Oracle Solaris 11](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/oracle.com/solaris-11.xml.in)
+    - `solaris10`: [Solaris 10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/sun.com/solaris-10.xml.in)
 - trisquel
-    - `trisquel11`
-    - `trisquel10`
+    - `trisquel11`: [Trisquel 11.0 LTS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/trisquel.info/trisquel-11.xml.in)
+    - `trisquel10`: [Trisquel 10.0 LTS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/trisquel.info/trisquel-10.xml.in)
 - ubuntu
-    - `ubuntu25.10`
-    - `ubuntu25.04`
-    - `ubuntu24.10`
-    - `ubuntu24.04`
-    - `ubuntu22.04`
-    - `ubuntu20.04`
-    - `ubuntu18.04`
-    - `ubuntu16.04`
+    - `ubuntu25.10`: [Ubuntu 25.10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/ubuntu.com/ubuntu-25.10.xml.in)
+    - `ubuntu25.04`: [Ubuntu 25.04](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/ubuntu.com/ubuntu-25.04.xml.in)
+    - `ubuntu24.10`: [Ubuntu 24.10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/ubuntu.com/ubuntu-24.10.xml.in)
+    - `ubuntu24.04`: [Ubuntu 24.04 LTS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/ubuntu.com/ubuntu-24.04.xml.in)
+    - `ubuntu22.04`: [Ubuntu 22.04 LTS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/ubuntu.com/ubuntu-22.04.xml.in)
+    - `ubuntu20.04`: [Ubuntu 20.04 LTS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/ubuntu.com/ubuntu-20.04.xml.in)
+    - `ubuntu18.04`: [Ubuntu 18.04 LTS](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/ubuntu.com/ubuntu-18.04.xml.in)
+    - `ubuntu16.04`: [Ubuntu 16.04](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/ubuntu.com/ubuntu-16.04.xml.in)
 - ucs
-    - `ucs5.0`
-    - `ucs4.4`
+    - `ucs5.0`: [Univention Corporate Server 5.0](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/univention.de/ucs-5.0.xml.in)
+    - `ucs4.4`: [Univention Corporate Server 4.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/univention.de/ucs-4.4.xml.in)
 - voidlinux
-    - `voidlinux`
+    - `voidlinux`: [Void Linux](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/voidlinux.org/voidlinux-rolling.xml.in)
 - win
-    - `win11`
-    - `win10`
-    - `win2k16`
-    - `win2k19`
-    - `win2k22`
-    - `win2k25`
-    - `win7`
+    - `win11`: [Microsoft Windows 11](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/microsoft.com/win-11.xml.in)
+    - `win10`: [Microsoft Windows 10](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/microsoft.com/win-10.xml.in)
+    - `win2k16`: [Microsoft Windows Server 2016](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/microsoft.com/win-2k16.xml.in)
+    - `win2k19`: [Microsoft Windows Server 2019](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/microsoft.com/win-2k19.xml.in)
+    - `win2k22`: [Microsoft Windows Server 2022](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/microsoft.com/win-2k22.xml.in)
+    - `win2k25`: [Microsoft Windows Server 2025](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/microsoft.com/win-2k25.xml.in)
+    - `win7`: [Microsoft Windows 7](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/microsoft.com/win-7.xml.in)
