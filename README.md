@@ -97,7 +97,7 @@ Example:
           osinfo: fedora41
 ```
 
-Default: `detect=on`.
+Default: `generic`.
 
 ## License
 
