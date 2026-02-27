@@ -1,0 +1,21 @@
+name: Check values of secure-boot and enrolled-keys firmware features
+inputs:
+  vm-name:
+    description: Name of the VM (libvirt domain)
+    required: true
+  condition:
+    description: Expected feature values
+    required: true
+runs:
+  using: composite
+  steps:
+    - run: which xsltproc > /dev/null || sudo apt install xsltproc
+      shell: bash -euo pipefail {0}
+    - run: |
+        virsh --connect qemu:///session dumpxml "$INPUT_VM_NAME" \
+          | xsltproc "$GITHUB_ACTION_PATH"/secure-boot-check.xslt - | tee /dev/stderr \
+          | grep -Fq "$INPUT_CONDITION"
+      env:
+        INPUT_VM_NAME: ${{ inputs.vm-name }}
+        INPUT_CONDITION: ${{ inputs.condition }}
+      shell: bash -euo pipefail {0}
