@@ -121,7 +121,7 @@ runs:
         INPUT_VM_NAME: ${{ inputs.vm-name }}
       shell: bash -euxo pipefail {0}
       id: get-ip-address
-    - run: ssh -o 'StrictHostKeyChecking accept-new' -v root@"$INPUT_VM_NAME" true
+    - run: ssh -o 'StrictHostKeyChecking accept-new' -o 'ConnectionAttempts 120' -v root@"$INPUT_VM_NAME" true
       env:
         INPUT_VM_NAME: ${{ inputs.vm-name }}
       shell: bash
