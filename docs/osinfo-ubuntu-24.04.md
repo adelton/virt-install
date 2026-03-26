@@ -1,4 +1,4 @@
-On Ubuntu 24.04.3 LTS runners,
+On Ubuntu 24.04.4 LTS runners,
 supported `osinfo` parameter values are based
 on the `osinfo-db` package, currently in version
 0.20250606-0ubuntu0.24.04.1.
