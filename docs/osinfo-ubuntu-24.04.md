@@ -101,7 +101,6 @@ for extended period of time are shown.
     - `silverblue-unknown`: [Fedora Silverblue](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/silverblue-unknown.xml.in)
 - freebsd
     - `freebsd14.2`: [FreeBSD 14.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-14.2.xml.in)
-    - `freebsd14.1`: [FreeBSD 14.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-14.1.xml.in)
     - `freebsd13.4`: [FreeBSD 13.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-13.4.xml.in)
     - `freebsd4.5`: [FreeBSD 4.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.5.xml.in)
     - `freebsd4.4`: [FreeBSD 4.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.4.xml.in)
@@ -140,8 +139,6 @@ for extended period of time are shown.
     - `haikur1beta4`: [Haiku R1/Beta4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/haiku-os.org/haiku-r1beta4.xml.in)
 - hyperbola
     - `hyperbola03`: [Hyperbola](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/hyperbola.info/hyperbola-03.xml.in)
-- mageia
-    - `mageia9`: [Mageia 9](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mageia.org/mageia-9.xml.in)
 - mandrake
     - `mandrake10.2`: [Mandrake Linux 10.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-10.2.xml.in)
     - `mandrake10.1`: [Mandrake Linux 10.1](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/mandriva.com/mandrake-10.1.xml.in)
