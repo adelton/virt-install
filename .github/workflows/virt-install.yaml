@@ -46,7 +46,7 @@ on:
 jobs:
   test-plan:
     name: Generate test plan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 1
     if: github.event_name != 'schedule' || github.repository == 'adelton/virt-install'
     outputs:

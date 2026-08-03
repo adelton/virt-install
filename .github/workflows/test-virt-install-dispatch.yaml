@@ -10,7 +10,7 @@ on:
 jobs:
   test-dispatch:
     name: Dispatch
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     permissions:
       actions: write
     timeout-minutes: 1
