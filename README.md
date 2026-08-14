@@ -15,14 +15,14 @@ jobs:
   virt-install-almalinux-x86_64:
     runs-on: ubuntu-latest
     steps:
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://repo.almalinux.org/almalinux/10/cloud/x86_64/images/AlmaLinux-10-GenericCloud-latest.x86_64.qcow2
       - run: ssh root@vm1.example.com cat /proc/cmdline
   virt-install-almalinux-aarch64:
     runs-on: ubuntu-26.04-arm
     steps:
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://repo.almalinux.org/almalinux/10/cloud/aarch64/images/AlmaLinux-10-GenericCloud-latest.aarch64.qcow2
           osinfo: almalinux10
@@ -79,7 +79,7 @@ Required; no default.
 
 Example:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud-images.ubuntu.com/releases/resolute/release/ubuntu-26.04-server-cloudimg-amd64.img
 ```
@@ -100,7 +100,7 @@ runner:
 ```
     runs-on: ubuntu-latest
     steps:
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://www.example.com/pub/Linux-image-1.2.3.qcow2
           arch: aarch64
@@ -112,7 +112,7 @@ Name of the virtual machine (libvirt domain) to use. It will be also
 used to set up hostname resolution to the VM IP address in `/etc/hosts`,
 so after
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud-images.ubuntu.com/releases/resolute/release/ubuntu-26.04-server-cloudimg-amd64.img
           vm-name: ubuntu.example.test
@@ -138,7 +138,7 @@ be explicitly specified.
 
 Example:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
           osinfo: fedora41
@@ -157,7 +157,7 @@ Space-separated values for `virt-install` `--network` arguments.
 Example of using a bridge that presumably previous step in the job
 created:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud-images.ubuntu.com/releases/resolute/release/ubuntu-26.04-server-cloudimg-amd64.img
           network: bridge=custom1
@@ -173,7 +173,7 @@ bridge.
 
 For example:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud-images.ubuntu.com/releases/noble/release/ubuntu-24.04-server-cloudimg-amd64.img
           network: ./custom-network.xml
@@ -187,7 +187,7 @@ Additional command-line arguments to `virt-install`.
 
 Example of enabling a vsock host/guest interface for the VM:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud-images.ubuntu.com/releases/resolute/release/ubuntu-26.04-server-cloudimg-amd64.img
           args: --vsock cid.auto=yes
@@ -195,7 +195,7 @@ Example of enabling a vsock host/guest interface for the VM:
 
 Example of exporting a directory to the VM:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud-images.ubuntu.com/releases/noble/release/ubuntu-24.04-server-cloudimg-amd64.img
           args: >
@@ -206,7 +206,7 @@ Example of exporting a directory to the VM:
 Example of making Debian 13 actually boot without getting stuck
 finding the operating system in the image:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud.debian.org/images/cloud/trixie/latest/debian-13-genericcloud-amd64.qcow2
           osinfo: debian13
@@ -235,7 +235,7 @@ minor customizations to the image before running the virtual machine.
 Example:
 
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Server/x86_64/images/Fedora-Server-Guest-Generic-43-1.6.x86_64.qcow2
           osinfo: fedora42
@@ -264,7 +264,7 @@ Default: unset, console output not stored in a file.
 
 Example:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud-images.ubuntu.com/releases/resolute/release/ubuntu-26.04-server-cloudimg-amd64.img
           console-output-file: virsh-console-vm1.out
@@ -283,7 +283,7 @@ able to retrieve it from the DHCP.
 
 Example:
 ```
-      - uses: adelton/virt-install@master
+      - uses: adelton/virt-install@v0.5
         with:
           disk-url: https://cloud-images.ubuntu.com/releases/resolute/release/ubuntu-26.04-server-cloudimg-amd64.img
           osinfo: ubuntu24.04
