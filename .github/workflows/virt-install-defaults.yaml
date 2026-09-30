@@ -35,13 +35,17 @@ jobs:
           disk-url: ${{ matrix.disk-url }}
         id: run-machine
       - run: ssh root@vm1.example.com cat /etc/os-release
+        background: true
       # With Ubuntu and --osinfo generic and --boot unspecified,
       # we get Secure Boot uspecified on x86_64 but enabled on aarch64
       - uses: ./.github/actions/secure-boot-check
         with:
           vm-name: vm1.example.com
           condition: ${{ matrix.secure-boot-check }}
+        background: true
       - run: |
           [[ "$IP_ADDRESS" =~ ^192\.168\.122\. ]]
         env:
           IP_ADDRESS: ${{ steps.run-machine.outputs.ip-address }}
+        background: true
+      - wait-all:

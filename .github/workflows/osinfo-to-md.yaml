@@ -22,9 +22,12 @@ jobs:
     if: github.event_name != 'schedule' || github.repository == 'adelton/virt-install'
     steps:
       - uses: actions/checkout@v6
+        background: true
+      - run: . /etc/os-release && echo "UBUNTU_VERSION=$VERSION_ID" >> $GITHUB_ENV
+        background: true
       - run: sudo apt update
       - run: sudo apt install osinfo-db xsltproc
-      - run: . /etc/os-release && echo "UBUNTU_VERSION=$VERSION_ID" >> $GITHUB_ENV
+      - wait-all:
       - run: util/osinfo-to-md.sh > docs/osinfo-ubuntu-$UBUNTU_VERSION.md
       - run: git diff --exit-code -- docs/osinfo-ubuntu-$UBUNTU_VERSION.md
         id: git-diff
