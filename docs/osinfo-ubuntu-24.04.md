@@ -101,7 +101,6 @@ for extended period of time are shown.
     - `fedora-unknown`: [Fedora](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/fedora-unknown.xml.in)
     - `silverblue-unknown`: [Fedora Silverblue](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/fedoraproject.org/silverblue-unknown.xml.in)
 - freebsd
-    - `freebsd14.2`: [FreeBSD 14.2](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-14.2.xml.in)
     - `freebsd4.5`: [FreeBSD 4.5](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.5.xml.in)
     - `freebsd4.4`: [FreeBSD 4.4](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.4.xml.in)
     - `freebsd4.3`: [FreeBSD 4.3](https://gitlab.com/libosinfo/osinfo-db/-/blob/main/data/os/freebsd.org/freebsd-4.3.xml.in)
