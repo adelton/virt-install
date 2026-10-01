@@ -6,12 +6,13 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '6 3 * * 1'
+
+permissions:
+  contents: read
+
 jobs:
   osinfo-to-md:
     runs-on: ${{ matrix.runs-on }}
-    permissions:
-      contents: write
-      pull-requests: write
     strategy:
       fail-fast: false
       matrix:
@@ -28,32 +29,86 @@ jobs:
       - run: sudo apt update
       - run: sudo apt install osinfo-db xsltproc
       - wait-all:
-      - run: util/osinfo-to-md.sh > docs/osinfo-ubuntu-$UBUNTU_VERSION.md
-      - run: git diff --exit-code -- docs/osinfo-ubuntu-$UBUNTU_VERSION.md
-        id: git-diff
-        continue-on-error: true
+      - run: git fetch origin master
+      - run: git checkout origin/master -- docs/osinfo-ubuntu-$UBUNTU_VERSION.md
       - run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions@users.noreply.github.com"
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@users.noreply.github.com"
+      - run: git commit -m 'Reset file content to master.' docs/osinfo-ubuntu-$UBUNTU_VERSION.md || true
+      - run: util/osinfo-to-md.sh > docs/osinfo-ubuntu-$UBUNTU_VERSION.md
+      - run: |
+          # regenerate the osinfo page and see if there is a change
+          START_HEAD=$( git rev-parse HEAD )
 
-          OSINFO_DB_VERSION=$( dpkg-query -W -f '${Version}\n' osinfo-db )
-          DATE=$( date +%F )
-          BRANCH="osinfo-update/ubuntu-$UBUNTU_VERSION-$OSINFO_DB_VERSION-$DATE"
-          git checkout -b "$BRANCH"
           git add docs/osinfo-ubuntu-$UBUNTU_VERSION.md
-          COMMIT_MESSAGE="Update osinfo documentation for osinfo-db $OSINFO_DB_VERSION @ Ubuntu $UBUNTU_VERSION on $DATE."
-          git commit -m "$COMMIT_MESSAGE"
+          OSINFO_DB_VERSION=$( dpkg-query -W -f '${Version}\n' osinfo-db )
+          COMMIT_MESSAGE="Update osinfo documentation for osinfo-db $OSINFO_DB_VERSION @ Ubuntu $UBUNTU_VERSION."
+          git commit -m "$COMMIT_MESSAGE" || true
+          git show
+
+          git format-patch "$START_HEAD" --stdout > osinfo-ubuntu-$UBUNTU_VERSION.patch
+          [ -s osinfo-ubuntu-$UBUNTU_VERSION.patch ] || rm -f osinfo-ubuntu-$UBUNTU_VERSION.patch
+      - uses: actions/upload-artifact@v7
+        with:
+          path: osinfo-ubuntu-*.patch
+          archive: false
+          retention-days: 1
+
+  count-patches:
+    needs: osinfo-to-md
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    outputs:
+      num-patches: ${{ steps.count-patches.outputs.num-patches }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: osinfo-ubuntu-*.patch
+          path: osinfo-ubuntu-patches
+          merge-multiple: true
+      - run: ( echo -n 'num-patches=' ; ls osinfo-ubuntu-patches/*.patch | wc -l ) | tee -a "$GITHUB_OUTPUT"
+        id: count-patches
+
+  create-pull-request:
+    needs: count-patches
+    if: needs.count-patches.outputs.num-patches != '0'
+    runs-on: ubuntu-slim
+    permissions:
+      contents: write
+      pull-requests: write
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: osinfo-ubuntu-*.patch
+          path: osinfo-ubuntu-patches
+          merge-multiple: true
+      - run: |
+          DATE=$( date +%F )
+          BRANCH="osinfo-update/$DATE"
+          git fetch origin master
+          git checkout -b "$BRANCH" origin/master
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git am osinfo-ubuntu-patches/*.patch
           git push origin "$BRANCH:$BRANCH"
 
-          echo '{ "head": "'"$BRANCH"'", "base": "master", "title": "'"$COMMIT_MESSAGE"'", "body": "Update the osinfo documentation, capture the up-to-date list of short-ids and/or remove distributions that went EOL." }' \
-          | tee /dev/stderr \
-          | curl -X POST \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            -H 'Content-Type: application/json' \
-            -d '@-' \
-            "$REPO_URL/pulls"
+          jq --arg BRANCH "$BRANCH" --arg DATE "$DATE" -n -f /dev/stdin <<'EOS' \
+            | tee /dev/stderr \
+            | curl --fail-with-body -X POST \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H 'Content-Type: application/json' \
+              -d '@-' \
+              "$REPO_URL/pulls"
+          {
+            head: $BRANCH,
+            base: "master",
+            title: ("Update osinfo documentation " + $DATE),
+            body: "Update the osinfo documentation, capture the up-to-date list of short-ids and/or remove distributions that went EOL."
+          }
+          EOS
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_URL: ${{ github.api_url }}/repos/${{ github.repository }}
         shell: bash -euxo pipefail {0}
-        if: steps.git-diff.outcome == 'failure'
