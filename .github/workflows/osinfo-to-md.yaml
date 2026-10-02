@@ -45,9 +45,12 @@ jobs:
           echo '{ "head": "'"$BRANCH"'", "base": "master", "title": "'"$COMMIT_MESSAGE"'", "body": "Update the osinfo documentation, capture the up-to-date list of short-ids and/or remove distributions that went EOL." }' \
           | tee /dev/stderr \
           | curl -X POST \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: token $GITHUB_TOKEN" \
             -H 'Content-Type: application/json' \
             -d '@-' \
-            ${{ github.api_url }}/repos/${{ github.repository }}/pulls
+            "$REPO_URL/pulls"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_URL: ${{ github.api_url }}/repos/${{ github.repository }}
         shell: bash -euxo pipefail {0}
         if: steps.git-diff.outcome == 'failure'

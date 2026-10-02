@@ -18,7 +18,7 @@ jobs:
     steps:
       - run: |
           curl -sS --fail-with-body -X POST \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: token $GITHUB_TOKEN" \
             -H 'Content-Type: application/json' \
             -d '{
               "ref": "${{ github.ref }}",
@@ -28,3 +28,5 @@ jobs:
                 "command": "cat /etc/os-release"
               }}' \
             ${{ github.api_url }}/repos/${{ github.repository }}/actions/workflows/virt-install.yaml/dispatches
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

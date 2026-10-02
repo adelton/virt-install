@@ -106,6 +106,8 @@ jobs:
       fail-fast: false
       matrix:
         include: ${{ fromJSON(needs.test-plan.outputs.matrix-run) }}
+    env:
+      VM_NAME: ${{ needs.test-plan.outputs.vm-name }}
     steps:
       - uses: actions/checkout@v6
       - id: run-machine
@@ -127,7 +129,7 @@ jobs:
         with:
           vm-name: ${{ needs.test-plan.outputs.vm-name }}
           condition: ${{ matrix.secure-boot-check }}
-      - run: ssh root@'${{ needs.test-plan.outputs.vm-name }}' "$INPUT_COMMAND"
+      - run: ssh "root@$VM_NAME" "$INPUT_COMMAND"
         if: inputs.command != ''
         env:
           INPUT_COMMAND: ${{ inputs.command }}
@@ -141,19 +143,19 @@ jobs:
           INPUT_NETWORK: ${{ matrix.network }}
           IP_ADDRESS: ${{ steps.run-machine.outputs.ip-address }}
       - run: |
-          diff <( ssh root@'${{ needs.test-plan.outputs.vm-name }}' 'mkdir /mnt/host-dir && mount -t virtiofs host-dir /mnt/host-dir && cat /mnt/host-dir/hostname' ) /etc/hostname
+          diff <( ssh "root@$VM_NAME" 'mkdir /mnt/host-dir && mount -t virtiofs host-dir /mnt/host-dir && cat /mnt/host-dir/hostname' ) /etc/hostname
         if: matrix.virtiofs-test == 'test'
       - run: |
-          virsh --connect qemu:///session dumpxml '${{ needs.test-plan.outputs.vm-name }}' | xmllint --xpath '/domain/devices/vsock' -
-          VSOCK=$( virsh --connect qemu:///session dumpxml '${{ needs.test-plan.outputs.vm-name }}' | xmllint --xpath 'string(/domain/devices/vsock/cid/@address)' - )
+          virsh --connect qemu:///session dumpxml "$VM_NAME" | xmllint --xpath '/domain/devices/vsock' -
+          VSOCK=$( virsh --connect qemu:///session dumpxml "$VM_NAME" | xmllint --xpath 'string(/domain/devices/vsock/cid/@address)' - )
           ssh_opts=( -o 'StrictHostKeyChecking accept-new' )
           [ -f /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf ] || ssh_opts+=( -o "ProxyCommand=socat - VSOCK-CONNECT:$VSOCK:22" )
           ssh "${ssh_opts[@]}" root@vsock%$VSOCK cat /etc/hostname
         if: matrix.vsock-ssh-test == 'test'
 
       - run: |
-          virsh --connect qemu:///session destroy '${{ needs.test-plan.outputs.vm-name }}'
-          virsh --connect qemu:///session undefine --nvram '${{ needs.test-plan.outputs.vm-name }}'
+          virsh --connect qemu:///session destroy "$VM_NAME"
+          virsh --connect qemu:///session undefine --nvram "$VM_NAME"
           rm -f ~/.ssh/known_hosts
         if: matrix.second-machine == 'recreate' || matrix.second-machine == 'local-file'
       - uses: ./
@@ -168,7 +170,7 @@ jobs:
         if: matrix.second-machine == 'recreate'
       - id: fetch-image
         run: |
-          curl -LO '${{ matrix.disk-url }}'
+          curl -LO "$DISK_URL"
           BASE_NAME="${DISK_URL##*/}"
           if [[ "$BASE_NAME" =~ .gz$ ]] ; then
             gunzip < "$BASE_NAME" > "${BASE_NAME%.gz}"
@@ -211,11 +213,14 @@ jobs:
           virt-customize: ${{ matrix.virt-customize }}
         if: matrix.second-machine == 'multihost'
       - run: |
-          ssh root@'${{ needs.test-plan.outputs.vm-name }}' 'ssh-keygen -N "" -f ~/.ssh/id_rsa'
-          ssh root@'${{ needs.test-plan.outputs.vm-name }}' 'cat ~/.ssh/id_rsa.pub' | ssh root@'${{ needs.test-plan.outputs.vm-name-2 }}' 'umask 077 && cat > ~/.ssh/authorized_keys'
-          ssh root@'${{ needs.test-plan.outputs.vm-name }}' "ssh -o 'StrictHostKeyChecking accept-new' root@'${{ steps.run-machine-2.outputs.ip-address }}' ip a"
+          ssh "root@$VM_NAME" 'ssh-keygen -N "" -f ~/.ssh/id_rsa'
+          ssh "root@$VM_NAME" 'cat ~/.ssh/id_rsa.pub' | ssh "root@$VM_NAME_2" 'umask 077 && cat > ~/.ssh/authorized_keys'
+          ssh "root@$VM_NAME" "ssh -o 'StrictHostKeyChecking accept-new' root@$IP_ADDRESS_2 ip a"
         shell: bash -euxo pipefail {0}
         if: matrix.second-machine == 'multihost'
+        env:
+          VM_NAME_2: ${{ needs.test-plan.outputs.vm-name-2 }}
+          IP_ADDRESS_2: ${{ steps.run-machine-2.outputs.ip-address }}
       - uses: ./.github/actions/secure-boot-check
         with:
           vm-name: ${{ needs.test-plan.outputs.vm-name-2 }}
