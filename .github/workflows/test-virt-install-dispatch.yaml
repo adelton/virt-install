@@ -17,16 +17,21 @@ jobs:
     if: github.event_name != 'schedule' || github.repository == 'adelton/virt-install'
     steps:
       - run: |
-          curl -sS --fail-with-body -X POST \
+          jq -n -f /dev/stdin <<'EOS' \
+          | tee /dev/stderr \
+          | curl -sS --fail-with-body -X POST \
             -H "Authorization: token $GITHUB_TOKEN" \
             -H 'Content-Type: application/json' \
-            -d '{
-              "ref": "${{ github.ref }}",
-              "inputs": {
-                "disk-url": "https://repo.almalinux.org/almalinux/10/cloud/x86_64/images/AlmaLinux-10-GenericCloud-latest.x86_64.qcow2",
-                "osinfo": "almalinux10",
-                "command": "cat /etc/os-release"
-              }}' \
-            ${{ github.api_url }}/repos/${{ github.repository }}/actions/workflows/virt-install.yaml/dispatches
+            -d '@-' \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/workflows/virt-install.yaml/dispatches"
+          {
+            "ref": $ENV.GITHUB_REF,
+            "inputs": {
+              "disk-url": "https://repo.almalinux.org/almalinux/10/cloud/x86_64/images/AlmaLinux-10-GenericCloud-latest.x86_64.qcow2",
+              "osinfo": "almalinux10",
+              "command": "cat /etc/os-release"
+            }
+          }
+          EOS
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
