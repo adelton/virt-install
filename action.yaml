@@ -133,7 +133,7 @@ runs:
     - run: |
         (
           cd virt-install-images
-          echo 'instance-id: $INPUT_VM_NAME' | tee meta-data
+          echo "instance-id: $INPUT_VM_NAME" | tee meta-data
           (
             echo '#cloud-config'
             echo 'disable_root: false'
