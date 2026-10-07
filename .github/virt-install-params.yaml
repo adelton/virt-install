@@ -140,6 +140,17 @@ virt-install:
       virt-customize: >
         --mkdir /etc/systemd/system/serial-getty@.service.d
         --copy-in tests/after-sshd.conf:/etc/systemd/system/serial-getty@.service.d
+      runs-on:
+        ubuntu-26.04:
+        ubuntu-26.04-arm:
+          virt-customize: &serial-getty-systemd-device-timeout >
+            --mkdir /etc/systemd/system/serial-getty@.service.d
+            --copy-in tests/after-sshd.conf:/etc/systemd/system/serial-getty@.service.d
+            --mkdir /etc/systemd/system.conf.d
+            --copy-in tests/systemd-device-timeout.conf:/etc/systemd/system.conf.d
+        ubuntu-24.04:
+        ubuntu-24.04-arm:
+          virt-customize: *serial-getty-systemd-device-timeout
     Alpine Linux 3.23:
       osinfo: alpinelinux3.21
       arch-display:
