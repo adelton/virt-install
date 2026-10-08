@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - '*'
+  pull_request:
   workflow_dispatch:
   schedule:
     - cron: '10 3 * * 1'
@@ -25,7 +26,7 @@ jobs:
             -d '@-' \
             "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/workflows/virt-install.yaml/dispatches"
           {
-            "ref": $ENV.GITHUB_REF,
+            "ref": ( if $ENV.GITHUB_HEAD_REF != "" then "refs/heads/" + $ENV.GITHUB_HEAD_REF else $ENV.GITHUB_REF end ),
             "inputs": {
               "disk-url": "https://repo.almalinux.org/almalinux/10/cloud/x86_64/images/AlmaLinux-10-GenericCloud-latest.x86_64.qcow2",
               "osinfo": "almalinux10",
