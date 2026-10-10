@@ -21,6 +21,17 @@ virt-install:
               secure-boot-check: secure-boot=yes
             uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no:
               secure-boot-check: secure-boot=no
+    AlmaLinux 10.2 (with TPM):
+      osinfo: almalinux10
+      arch-display: x86_64
+      disk-url: https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2
+      inventory: tests/inventory/almalinux-10-x86_64
+      boot: uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
+      secure-boot-check: secure-boot=yes
+      args: >
+        --memorybacking access.mode=shared
+        --filesystem source=/etc,target=host-dir,driver.type=virtiofs
+        --vsock cid.auto=yes
     Fedora 44 (no cloud-init):
       osinfo: fedora42
       arch-display:
@@ -224,6 +235,7 @@ virt-install:
 
   args:
     - >
+      --tpm none
       --memorybacking access.mode=shared
       --filesystem source=/etc,target=host-dir,driver.type=virtiofs
       --vsock cid.auto=yes
@@ -308,38 +320,25 @@ virt-install:
       arch-display: aarch64
       .no-exclude-test: true
 
-    - disk-url:
-        https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2 :
-        https://download.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-44-1.7.x86_64.qcow2 :
-        https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/x86_64/images/Fedora-Server-Guest-Generic-44-1.7.x86_64.qcow2 :
-        https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2 :
-          osinfo: fedora42
-        https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.vmdk :
-        https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.img :
-        https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64.vmdk :
-        https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64.img :
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      boot:
-        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no
-      .virsh-console-output: |
-        BdsDxe: failed to load Boot0002 "Grub Bootloader" from Fv(7CB8BDC9-F8EB-4F34-AAEA-3EE4AF6516A1)/FvFile(B5AE312C-BC8A-43B1-9C62-EBB826DD5D07): Not Found
     - disk-url: https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2
+      name: AlmaLinux 10.2
       runs-on: ubuntu-24.04-arm
       boot:
-        uefi:
-          .virsh-console-output: &almalinux-arch-exception-secure-boot |
-            BdsDxe: loading Boot0002 "AlmaLinux" from HD(2,GPT,5FF7AC71-CA65-44A3-B03F-AC7935F98D42,0x1000,0x64000)/\EFI\almalinux\shimx64.efi
-            BdsDxe: starting Boot0002 "AlmaLinux" from HD(2,GPT,5FF7AC71-CA65-44A3-B03F-AC7935F98D42,0x1000,0x64000)/\EFI\almalinux\shimx64.efi
-            !!!! X64 Exception Type - 06(#UD - Invalid Opcode)  CPU Apic ID - 00000000 !!!!
-        uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes:
-          .virsh-console-output: *almalinux-arch-exception-secure-boot
-        uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no:
-          .virsh-console-output: |
-            BdsDxe: loading Boot0003 "AlmaLinux" from HD(2,GPT,5FF7AC71-CA65-44A3-B03F-AC7935F98D42,0x1000,0x64000)/\EFI\almalinux\shimx64.efi
-            BdsDxe: starting Boot0003 "AlmaLinux" from HD(2,GPT,5FF7AC71-CA65-44A3-B03F-AC7935F98D42,0x1000,0x64000)/\EFI\almalinux\shimx64.efi
-            !!!! X64 Exception Type - 06(#UD - Invalid Opcode)  CPU Apic ID - 00000000 !!!!
+        - uefi
+        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
+        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no
+      .virsh-console-output: &almalinux-arch-exception-secure-boot |
+        BdsDxe: loading Boot0001 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x4)/Pci(0x0,0x0)
+        BdsDxe: starting Boot0001 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x4)/Pci(0x0,0x0)
+        !!!! X64 Exception Type - 06(#UD - Invalid Opcode)  CPU Apic ID - 00000000 !!!!
+    - disk-url: https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2
+      name: AlmaLinux 10.2 (with TPM)
+      runs-on: ubuntu-24.04-arm
+      boot: uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
+      .virsh-console-output: &almalinux-arch-exception-secure-boot |
+        BdsDxe: loading Boot0002 "AlmaLinux" from HD(2,GPT,5FF7AC71-CA65-44A3-B03F-AC7935F98D42,0x1000,0x64000)/\EFI\almalinux\shimx64.efi
+        BdsDxe: starting Boot0002 "AlmaLinux" from HD(2,GPT,5FF7AC71-CA65-44A3-B03F-AC7935F98D42,0x1000,0x64000)/\EFI\almalinux\shimx64.efi
+        !!!! X64 Exception Type - 06(#UD - Invalid Opcode)  CPU Apic ID - 00000000 !!!!
     - disk-url:
         https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2 :
           runs-on: ubuntu-24.04-arm
