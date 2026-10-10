@@ -309,21 +309,15 @@ virt-install:
       .no-exclude-test: true
 
     - disk-url:
-        - https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2
-        - https://download.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-44-1.7.x86_64.qcow2
-        - https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/x86_64/images/Fedora-Server-Guest-Generic-44-1.7.x86_64.qcow2
-        - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.vmdk
-        - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.img
-        - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64.vmdk
-        - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64.img
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      boot:
-        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no
-      .virsh-console-output: |
-        BdsDxe: failed to load Boot0002 "Grub Bootloader" from Fv(7CB8BDC9-F8EB-4F34-AAEA-3EE4AF6516A1)/FvFile(B5AE312C-BC8A-43B1-9C62-EBB826DD5D07): Not Found
-    - disk-url: https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2
+        https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2 :
+        https://download.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-44-1.7.x86_64.qcow2 :
+        https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/x86_64/images/Fedora-Server-Guest-Generic-44-1.7.x86_64.qcow2 :
+        https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2 :
+          osinfo: fedora42
+        https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.vmdk :
+        https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.img :
+        https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64.vmdk :
+        https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64.img :
       runs-on:
         - ubuntu-26.04
         - ubuntu-26.04-arm
@@ -346,38 +340,15 @@ virt-install:
             BdsDxe: loading Boot0003 "AlmaLinux" from HD(2,GPT,5FF7AC71-CA65-44A3-B03F-AC7935F98D42,0x1000,0x64000)/\EFI\almalinux\shimx64.efi
             BdsDxe: starting Boot0003 "AlmaLinux" from HD(2,GPT,5FF7AC71-CA65-44A3-B03F-AC7935F98D42,0x1000,0x64000)/\EFI\almalinux\shimx64.efi
             !!!! X64 Exception Type - 06(#UD - Invalid Opcode)  CPU Apic ID - 00000000 !!!!
-    - disk-url: https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2
-      runs-on: ubuntu-24.04-arm
+    - disk-url:
+        https://repo.almalinux.org/almalinux/10.2/cloud/x86_64/images/AlmaLinux-10-GenericCloud-10.2-20260526.0.x86_64.qcow2 :
+          runs-on: ubuntu-24.04-arm
+        https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-x86_64-uefi-cloudinit-r0.qcow2 :
+        https://download.opensuse.org/tumbleweed/appliances/openSUSE-Tumbleweed-Minimal-VM.x86_64-Cloud.qcow2 :
       boot:
         - hd
         - ''
       .virsh-console-output-empty: true
-    - disk-url:
-        - https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-x86_64-uefi-cloudinit-r0.qcow2
-        - https://downloads.openwrt.org/releases/25.12.2/targets/x86/64/openwrt-25.12.2-x86-64-generic-ext4-combined-efi.img.gz
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      boot:
-        - uefi
-        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
-      .virsh-console-output: |
-        BdsDxe: loading Boot0002 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x4)/Pci(0x0,0x0)
-        BdsDxe: failed to load Boot0002 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x4)/Pci(0x0,0x0): Access Denied -- rejected probably by Secure Boot
-        BdsDxe: No bootable option or device was found.
-        BdsDxe: Press any key to enter the Boot Manager Menu.
-    - disk-url: https://fastly.mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-cloudimg.qcow2
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      boot:
-        - uefi
-        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
-      .virsh-console-output: |
-        BdsDxe: loading Boot0002 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x4)/Pci(0x0,0x0)
-        BdsDxe: failed to load Boot0002 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x4)/Pci(0x0,0x0): Access Denied -- rejected probably by Secure Boot
-        BdsDxe: No bootable option or device was found.
-        BdsDxe: Press any key to enter the Boot Manager Menu.
     - disk-url:
         - https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-x86_64-uefi-cloudinit-r0.qcow2
         - https://fastly.mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-cloudimg.qcow2
@@ -409,13 +380,6 @@ virt-install:
         BdsDxe: No bootable option or device was found.
         BdsDxe: Press any key to enter the Boot Manager Menu.
     - disk-url:
-        - https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-x86_64-uefi-cloudinit-r0.qcow2
-        - https://download.opensuse.org/tumbleweed/appliances/openSUSE-Tumbleweed-Minimal-VM.x86_64-Cloud.qcow2
-      boot:
-        - hd
-        - ''
-      .virsh-console-output-empty: true
-    - disk-url:
         https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-aarch64-uefi-cloudinit-r0.qcow2 :
         https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2 :
           osinfo: fedora42
@@ -440,20 +404,6 @@ virt-install:
         - ''
         - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
       .virsh-console-output: 'Verification failed: (0x1A) Security Violation'
-    - disk-url: https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-aarch64-uefi-cloudinit-r0.qcow2
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      boot:
-        - uefi
-        - hd
-        - ''
-        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
-      .virsh-console-output: |
-        BdsDxe: loading Boot0002 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x5)/Pci(0x0,0x0)
-        BdsDxe: failed to load Boot0002 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x5)/Pci(0x0,0x0): Access Denied -- rejected probably by Secure Boot
-        BdsDxe: No bootable option or device was found.
-        BdsDxe: Press any key to enter the Boot Manager Menu.
     - disk-url:
         - https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-aarch64-uefi-cloudinit-r0.qcow2
         - https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2
@@ -473,45 +423,11 @@ virt-install:
         BdsDxe: failed to start Boot0002 "EFI Internal Shell" from Fv(64074AFE-340A-4BE6-94BA-91B5B4D0F71E)/FvFile(7C04A583-9E3E-4F1C-AD65-E05268D0B4D1): Security Violation
         BdsDxe: No bootable option or device was found.
         BdsDxe: Press any key to enter the Boot Manager Menu.
-    - disk-url:
-        - https://download.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-44-1.7.x86_64.qcow2
-        - https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/x86_64/images/Fedora-Server-Guest-Generic-44-1.7.x86_64.qcow2
-        - https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      osinfo: fedora42
-      boot: uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no
-      .virsh-console-output: |
-        BdsDxe: failed to load Boot0002 "Grub Bootloader" from Fv(7CB8BDC9-F8EB-4F34-AAEA-3EE4AF6516A1)/FvFile(B5AE312C-BC8A-43B1-9C62-EBB826DD5D07): Not Found
-    - disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      osinfo: fedora42
-      boot: uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no
-      .virsh-console-output: |
-        BdsDxe: failed to load Boot0002 "Grub Bootloader" from Fv(7CB8BDC9-F8EB-4F34-AAEA-3EE4AF6516A1)/FvFile(B5AE312C-BC8A-43B1-9C62-EBB826DD5D07): Not Found
     - disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
       osinfo: generic
       boot: uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
       # ERROR    operation failed: Unable to find 'efi' firmware that is compatible with the current configuration
       # Domain installation does not appear to have been successful.
-    - disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      osinfo: fedora42
-      boot:
-        - uefi
-        - hd
-        - ''
-        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
-      .virsh-console-output: |
-        BdsDxe: loading Boot0002 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x5)/Pci(0x0,0x0)
-        BdsDxe: failed to load Boot0002 "UEFI Misc Device" from PciRoot(0x0)/Pci(0x1,0x5)/Pci(0x0,0x0): Access Denied -- rejected probably by Secure Boot
-        BdsDxe: No bootable option or device was found.
-        BdsDxe: Press any key to enter the Boot Manager Menu.
     - disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2
       runs-on:
         - ubuntu-26.04
@@ -532,18 +448,6 @@ virt-install:
         - hd
         - ''
       .virsh-console-output: "Booting `Debian GNU/Linux'"
-    - disk-url:
-        - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.vmdk
-        - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.img
-        - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64.vmdk
-        - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64.img
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      boot: uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no
-      .virsh-console-output: |
-        BdsDxe: failed to load Boot0002 "Grub Bootloader" from Fv(7CB8BDC9-F8EB-4F34-AAEA-3EE4AF6516A1)/FvFile(B5AE312C-BC8A-43B1-9C62-EBB826DD5D07): Not Found
-        Reset System
     - disk-url:
         - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.vmdk
         - https://cloud-images.ubuntu.com/releases/resolute/release-20260421/ubuntu-26.04-server-cloudimg-amd64v3.img
