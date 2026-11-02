@@ -4,6 +4,8 @@ on:
     branches:
       - '*'
   pull_request:
+    branches-ignore:
+      - 'osinfo-update/*'
   workflow_dispatch:
   schedule:
     - cron: '6 3 * * 1'
