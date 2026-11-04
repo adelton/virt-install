@@ -32,12 +32,12 @@ virt-install:
         --memorybacking access.mode=shared
         --filesystem source=/etc,target=host-dir,driver.type=virtiofs
         --vsock cid.auto=yes
-    Fedora 44 (no cloud-init):
+    Fedora 45 (no cloud-init):
       osinfo: fedora42
       arch-display:
         x86_64:
-          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/x86_64/images/Fedora-Server-Guest-Generic-44-1.7.x86_64.qcow2
-          inventory: tests/inventory/fedora-44-server-x86_64
+          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/45/Server/x86_64/images/Fedora-Server-Guest-Generic-45-1.4.x86_64.qcow2
+          inventory: tests/inventory/fedora-45-server-x86_64
           runs-on:
             ubuntu-26.04:
             ubuntu-26.04-arm:
@@ -57,6 +57,28 @@ virt-install:
         --link /dev/null:/etc/systemd/system/initial-setup.service
         --no-selinux-relabel
       vsock-ssh-test: no
+    Fedora 45:
+      osinfo: fedora42
+      arch-display:
+        x86_64:
+          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/45/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-45-1.4.x86_64.qcow2
+          inventory: tests/inventory/fedora-45-x86_64
+          runs-on:
+            ubuntu-26.04:
+            ubuntu-26.04-arm:
+              virt-customize: &systemd-device-timeout >
+                --mkdir /etc/systemd/system.conf.d
+                --copy-in tests/systemd-device-timeout.conf:/etc/systemd/system.conf.d
+                --no-selinux-relabel
+            ubuntu-24.04:
+            ubuntu-24.04-arm:
+              virt-customize: *systemd-device-timeout
+        aarch64:
+          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/45/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-45-1.4.aarch64.qcow2
+          inventory: tests/inventory/fedora-45-aarch64
+          virt-customize: *systemd-device-timeout
+          boot:
+            <<: *boot-hd-also-secure-boot
     Fedora 44:
       osinfo: fedora42
       arch-display:
@@ -77,37 +99,6 @@ virt-install:
           disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-44-1.7.aarch64.qcow2
           inventory: tests/inventory/fedora-44-aarch64
           virt-customize: *systemd-device-timeout
-    Fedora 43:
-      osinfo:
-        fedora42:
-        generic:
-          boot:
-            uefi:
-              secure-boot-check: secure-boot=no
-            hd:
-              secure-boot-check: secure-boot=missing
-            '':
-              secure-boot-check: secure-boot=missing
-            uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes:
-              secure-boot-check: secure-boot=excluded
-            uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no:
-              secure-boot-check: secure-boot=no
-      arch-display:
-        x86_64:
-          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
-          inventory: tests/inventory/fedora-43-x86_64
-          runs-on:
-            ubuntu-26.04:
-            ubuntu-26.04-arm:
-              virt-customize: *systemd-device-timeout
-            ubuntu-24.04:
-            ubuntu-24.04-arm:
-              virt-customize: *systemd-device-timeout
-        aarch64:
-          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2
-          inventory: tests/inventory/fedora-43-aarch64
-          virt-customize: *systemd-device-timeout
-      vsock-ssh-test: no
     Ubuntu 26.04:
       osinfo: ubuntu24.04
       arch-display:
@@ -390,8 +381,6 @@ virt-install:
         BdsDxe: Press any key to enter the Boot Manager Menu.
     - disk-url:
         https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-aarch64-uefi-cloudinit-r0.qcow2 :
-        https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2 :
-          osinfo: fedora42
       runs-on:
         - ubuntu-26.04
         - ubuntu-26.04-arm
@@ -415,7 +404,6 @@ virt-install:
       .virsh-console-output: 'Verification failed: (0x1A) Security Violation'
     - disk-url:
         - https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-aarch64-uefi-cloudinit-r0.qcow2
-        - https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2
       runs-on:
         - ubuntu-24.04
         - ubuntu-24.04-arm
@@ -436,21 +424,6 @@ virt-install:
       boot: uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
       # ERROR    operation failed: Unable to find 'efi' firmware that is compatible with the current configuration
       # Domain installation does not appear to have been successful.
-    - disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2
-      runs-on:
-        - ubuntu-26.04
-        - ubuntu-26.04-arm
-      osinfo: generic
-      boot:
-        - uefi
-        - hd
-        - ''
-        - uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
-      .virsh-console-output: |
-        BdsDxe: loading Boot0002 "UEFI QEMU QEMU USB HARDDRIVE 1-0000:00:01.2:00.0-1" from PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)/USB(0x0,0x0)
-        BdsDxe: failed to load Boot0002 "UEFI QEMU QEMU USB HARDDRIVE 1-0000:00:01.2:00.0-1" from PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)/USB(0x0,0x0): Access Denied -- rejected probably by Secure Boot
-        BdsDxe: No bootable option or device was found.
-        BdsDxe: Press any key to enter the Boot Manager Menu.
     - disk-url: https://cloud.debian.org/images/cloud/trixie/20260518-2482/debian-13-genericcloud-amd64-20260518-2482.qcow2
       boot:
         - hd

@@ -140,7 +140,7 @@ Example:
 ```
       - uses: adelton/virt-install@v0.5
         with:
-          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
+          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/45/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-45-1.4.x86_64.qcow2
           osinfo: fedora41
 ```
 
@@ -237,7 +237,7 @@ Example:
 ```
       - uses: adelton/virt-install@v0.5
         with:
-          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Server/x86_64/images/Fedora-Server-Guest-Generic-43-1.6.x86_64.qcow2
+          disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/x86_64/images/Fedora-Server-Guest-Generic-44-1.7.x86_64.qcow2
           osinfo: fedora42
           virt-customize: >
             --ssh-inject root:file:/home/runner/.ssh/id_rsa.pub
