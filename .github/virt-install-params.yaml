@@ -144,13 +144,24 @@ virt-install:
             <<: *boot-hd-also-secure-boot
       vsock-ssh-test: no
     Arch Linux latest:
-      osinfo: archlinux
+      osinfo: generic
       arch-display: x86_64
       disk-url: https://fastly.mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-cloudimg.qcow2
       inventory: tests/inventory/arch-linux-latest-x86_64
       virt-customize: >
         --mkdir /etc/systemd/system/serial-getty@.service.d
         --copy-in tests/after-sshd.conf:/etc/systemd/system/serial-getty@.service.d
+      boot:
+        uefi:
+          secure-boot-check: secure-boot=no
+        hd:
+          secure-boot-check: secure-boot=missing
+        '':
+          secure-boot-check: secure-boot=missing
+        uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes:
+          secure-boot-check: secure-boot=excluded
+        uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=no:
+          secure-boot-check: secure-boot=no
       runs-on:
         ubuntu-26.04:
         ubuntu-26.04-arm:
@@ -350,7 +361,6 @@ virt-install:
       .virsh-console-output-empty: true
     - disk-url:
         - https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-x86_64-uefi-cloudinit-r0.qcow2
-        - https://fastly.mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-cloudimg.qcow2
         - https://downloads.openwrt.org/releases/25.12.2/targets/x86/64/openwrt-25.12.2-x86-64-generic-ext4-combined-efi.img.gz
       runs-on:
         - ubuntu-26.04
@@ -365,7 +375,6 @@ virt-install:
         BdsDxe: Press any key to enter the Boot Manager Menu.
     - disk-url:
         - https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/cloud/nocloud_alpine-3.23.3-x86_64-uefi-cloudinit-r0.qcow2
-        - https://fastly.mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-cloudimg.qcow2
         - https://downloads.openwrt.org/releases/25.12.2/targets/x86/64/openwrt-25.12.2-x86-64-generic-ext4-combined-efi.img.gz
       runs-on:
         - ubuntu-24.04
@@ -422,8 +431,7 @@ virt-install:
         BdsDxe: failed to start Boot0002 "EFI Internal Shell" from Fv(64074AFE-340A-4BE6-94BA-91B5B4D0F71E)/FvFile(7C04A583-9E3E-4F1C-AD65-E05268D0B4D1): Security Violation
         BdsDxe: No bootable option or device was found.
         BdsDxe: Press any key to enter the Boot Manager Menu.
-    - disk-url: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2
-      osinfo: generic
+    - osinfo: generic
       boot: uefi,firmware.feature0.name=secure-boot,firmware.feature0.enabled=yes
       # ERROR    operation failed: Unable to find 'efi' firmware that is compatible with the current configuration
       # Domain installation does not appear to have been successful.
