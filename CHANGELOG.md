@@ -1,6 +1,7 @@
 
 # Changelog of adelton/virt-install
 
+- Expanded virt-customize SELinux comments and examples in README.
 - Add loop waiting for VM's IP address to show up either in DHCP leases
   or in the ARP table.
 - Use the actual instance name for instance-id.

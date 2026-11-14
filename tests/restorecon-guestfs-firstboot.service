@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Ensure /usr/lib/virt-sysprep has correct SELinux label
+Before=guestfs-firstboot.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/restorecon -rvv /usr/lib/virt-sysprep
+RemainAfterExit=yes
+StandardOutput=journal+console
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
+

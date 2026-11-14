@@ -241,17 +241,36 @@ Example:
           osinfo: fedora42
           virt-customize: >
             --ssh-inject root:file:/home/runner/.ssh/id_rsa.pub
-            --firstboot-command 'restorecon -rvv /root/.ssh'
+            --run-command 'setfiles -v -F /etc/selinux/targeted/contexts/files/file_contexts /root/.ssh'
             --link /dev/null:/etc/systemd/system/initial-setup.service
             --no-selinux-relabel
 ```
 
 The `virt-customize` runs a temporary virtual machine to edit the image.
-It uses host's kernel which in case of GitHub Actions' hosted Ubuntu
-runners will not run with SELinux enabled. If the operating system in
-the virtual machine runs with SELinux enabled, relabel of added files
-might be needed, either using `--selinux-relabel`, or a firstboot command
-as shown in the example above.
+It uses host's kernel and `libguestfs-tools` which in case of GitHub
+Actions' hosted Ubuntu runners will not run with SELinux enabled.
+If the operating system in the virtual machine runs with SELinux
+enabled, separate relabel of added files might be needed. By default
+the `/.autorelabel` file will be created by `virt-customize`, resulting
+in a long check and relabel of VM's whole filesystem upon the first boot.
+
+By using `--no-selinux-relabel` and `--run-command` with `setfiles`
+as shown above, we can target the relabel only to the files or directories
+we know have been changed and need the label set. This however works
+only if the architecture of the host and guest match.
+
+If the architectures are not the same,
+```
+            --firstboot-command 'restorecon -rvv /root/.ssh'
+            --no-selinux-relabel
+```
+can enable the targeted relabel during the VM's first boot. However,
+on Fedora 45+ this leads to an unlabeled
+`/usr/lib/virt-sysprep/firstboot.sh` and SELinux AVC denial, so additional
+workaround is needed, for example an extra
+[relabeling service](tests/restorecon-guestfs-firstboot.service) `--copy-in`
+and `--link` as shown in
+[.github/virt-install-params.yaml](.github/virt-install-params.yaml).
 
 Default: unset, meaning `virt-customize` will not be run.
 

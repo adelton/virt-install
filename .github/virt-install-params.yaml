@@ -44,6 +44,8 @@ virt-install:
               virt-customize: &ssh-key-systemd-device-timeout >
                 --ssh-inject root:file:/home/runner/.ssh/id_rsa.pub
                 --firstboot-command 'restorecon -rvv /root/.ssh'
+                --copy-in tests/restorecon-guestfs-firstboot.service:/etc/systemd/system
+                --link /etc/systemd/system/restorecon-guestfs-firstboot.service:/etc/systemd/system/multi-user.target.wants/restorecon-guestfs-firstboot.service
                 --link /dev/null:/etc/systemd/system/initial-setup.service
                 --mkdir /etc/systemd/system.conf.d
                 --copy-in tests/systemd-device-timeout.conf:/etc/systemd/system.conf.d
@@ -53,7 +55,7 @@ virt-install:
               virt-customize: *ssh-key-systemd-device-timeout
       virt-customize: >
         --ssh-inject root:file:/home/runner/.ssh/id_rsa.pub
-        --firstboot-command 'restorecon -rvv /root/.ssh'
+        --run-command 'setfiles -v -F /etc/selinux/targeted/contexts/files/file_contexts /root/.ssh'
         --link /dev/null:/etc/systemd/system/initial-setup.service
         --no-selinux-relabel
       vsock-ssh-test: no
