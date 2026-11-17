@@ -232,20 +232,25 @@ runs:
     - run: |
         MAC=$( virsh --connect qemu:///session dumpxml "$INPUT_VM_NAME" | xmllint --xpath 'string(/domain/devices/interface/mac/@address)' - )
         IP=
-        while read n ; do
-          if [ -n "$n" ] ; then
-            virsh --connect qemu:///system net-dhcp-leases "$n" --mac $MAC
-            IP=$( virsh --connect qemu:///system net-dhcp-leases "$n" --mac $MAC | sort -r | awk 'BEGIN { MAC=ARGV[1] ; delete ARGV[1] } $0 ~ MAC { gsub("/.*$", "", $5); print $5 ; exit}' $MAC )
-            if [ -n "$IP" ] ; then break ; fi
+        for i in $( seq 20 ) ; do
+          while read n ; do
+            if [ -n "$n" ] ; then
+              virsh --connect qemu:///system net-dhcp-leases "$n" --mac $MAC
+              IP=$( virsh --connect qemu:///system net-dhcp-leases "$n" --mac $MAC | sort -r | awk 'BEGIN { MAC=ARGV[1] ; delete ARGV[1] } $0 ~ MAC { gsub("/.*$", "", $5); print $5 ; exit}' $MAC )
+              if [ -n "$IP" ] ; then break ; fi
+            fi
+          done < <( virsh --connect qemu:///system net-list --name )
+          if [ -z "$IP" ] ; then
+            IP=$( arp -n | awk 'BEGIN { MAC=ARGV[1] ; delete ARGV[1] } $3 == MAC { print $1 }' $MAC )
           fi
-        done < <( virsh --connect qemu:///system net-list --name )
-        if [ -z "$IP" ] ; then
-          IP=$( arp -n | awk 'BEGIN { MAC=ARGV[1] ; delete ARGV[1] } $3 == MAC { print $1 }' $MAC )
-        fi
-        if [ -n "$IP" ] ; then
-          echo "$IP $INPUT_VM_NAME" | sudo tee -a /etc/hosts
-          echo "ip-address=$IP" | tee -a "$GITHUB_OUTPUT"
-        fi
+          if [ -n "$IP" ] ; then
+            echo "$IP $INPUT_VM_NAME" | sudo tee -a /etc/hosts
+            echo "ip-address=$IP" | tee -a "$GITHUB_OUTPUT"
+            exit
+          fi
+          sleep 5
+        done
+        exit 1
       env:
         INPUT_VM_NAME: ${{ inputs.vm-name }}
       shell: bash -euxo pipefail {0}
