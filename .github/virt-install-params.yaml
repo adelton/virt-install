@@ -170,6 +170,7 @@ virt-install:
             --copy-in tests/after-sshd.conf:/etc/systemd/system/serial-getty@.service.d
             --mkdir /etc/systemd/system.conf.d
             --copy-in tests/systemd-device-timeout.conf:/etc/systemd/system.conf.d
+            --link /dev/null:/etc/systemd/system/systemd-nsresourced.service
         ubuntu-24.04:
         ubuntu-24.04-arm:
           virt-customize: *serial-getty-systemd-device-timeout
