@@ -4,31 +4,8 @@ def xcontains($element):
 	| $element | to_entries | map($input[.key] == .value) | all
 ;
 
-def random_select($count; $at_least_once):
-	if $count <= 0 or length <= 0 then []
-	else
-		. as $in
-		| reduce ($at_least_once | keys[]) as $k ($in;
-			. as $iin
-			| $at_least_once[$k]
-			| until(length < 1 or (.[0] as $kk | any($iin[] | select(xcontains({ $k: $kk })))); .[1:])
-			| . as $sel
-			| if $sel | length > 0
-				then [ $iin[] | select(xcontains({ $k: $sel[0] })) ]
-				else $iin
-				end
-		)
-		| .[ now * 1000000 % length ] as $row
-		| [ $row,
-			($in - [ $row ]
-			| random_select($count - 1;
-				reduce ($row | to_entries[]) as $e ($at_least_once;
-					if .[$e.key] then .[$e.key] -= [ $e.value ] end)
-				| del(..|select(. == []))
-				)
-			)[]
-		]
-	end
+def unseen:
+	[ (.singles | length), (.pairs | length) ]
 ;
 
 def flatten_objects:
@@ -76,12 +53,33 @@ def flatten_objects:
 	end
 | map(select(. as $in | any($exclude[] as $e | $in | xcontains($e)) | not))
 
-| (reduce ( [ .[] | to_entries[] ] | unique[] ) as $i ({};
-	(.[ $i.key ] | (now * 1000000 % (length + 1))) as $random_at
-		| .[ $i.key ] = .[ $i.key ][0:$random_at] + [ $i.value ] + .[ $i.key ][$random_at:]
-	)) as $at_least_once
+| [ .[]
+	| ( [ to_entries[] | [.] | from_entries ] ) as $singles
+	| {
+		r: .,
+		singles: $singles,
+		pairs: [ $singles | range(0; length) as $i | range($i + 1; length) as $j | [.[$i], .[$j]] ]
+	}
+]
 
-| random_select($count; $at_least_once)
+| reduce range([ $count, length ] | min) as $n (.;
+	( if $n == 0 then [ range(length) ]
+		else ( .[$n:] | map(unseen) | max ) as $max
+			| [ range($n; length) as $i | select((.[$i] | unseen) == $max) | $i ]
+		end ) as $list
+
+	| $list[ now * 1000000 % ($list | length) ] as $selected_index
+	| .[$selected_index] as $selected
+	| .[$selected_index] = .[$n]
+	| .[$n] = $selected
+
+	| reduce range($n + 1; length) as $i (.;
+		.[$i].singles -= $selected.singles
+		| .[$i].pairs -= $selected.pairs
+	)
+)
+| .[:$count]
+| map(.r)
 
 # order keys in object for better workflow run display
 | map(. as $in | pick(.name, .["arch-display"], .arch, .["runs-on"], .boot, .["second-machine"]) + $in)
