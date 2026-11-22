@@ -19,9 +19,11 @@ jobs:
       - uses: actions/checkout@v6
       - id: produce-matrix
         run: |
+          SEED="$( date +%N )"
+          echo "seed=$SEED"
           yq . -o json .github/virt-install-params.yaml \
               | tee /dev/stderr \
-              | jq -cf ./ci/generate-test-matrix.jq --argjson reverse-exclude true \
+              | jq -cf ./ci/generate-test-matrix.jq --arg seed "$SEED" --argjson reverse-exclude true \
               | tee .github/virt-install.json \
               | ( echo -n 'matrix-run=' >> $GITHUB_OUTPUT ; tee -a $GITHUB_OUTPUT )
           jq -sr -L ci -f ./ci/test-matrix-to-html.jq < .github/virt-install.json >> $GITHUB_STEP_SUMMARY

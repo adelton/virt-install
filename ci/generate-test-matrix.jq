@@ -62,13 +62,15 @@ def flatten_objects:
 	}
 ]
 
+| ( $ARGS.named.seed // 42 | tonumber ) as $seed
+| [ limit($count + 1; $seed % 2147483646 + 1 | recurse(. * 48271 % 2147483647)) ][1:] as $random
 | reduce range([ $count, length ] | min) as $n (.;
 	( if $n == 0 then [ range(length) ]
 		else ( .[$n:] | map(unseen) | max ) as $max
 			| [ range($n; length) as $i | select((.[$i] | unseen) == $max) | $i ]
 		end ) as $list
 
-	| $list[ now * 1000000 % ($list | length) ] as $selected_index
+	| $list[ $random[$n] % ($list | length) ] as $selected_index
 	| .[$selected_index] as $selected
 	| .[$selected_index] = .[$n]
 	| .[$n] = $selected
